@@ -1,0 +1,78 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "_AdminLayout";
+}
+
+<div class="row mb-4">
+    <div class="col-12 text-center">
+        <h2 class="fw-bold text-primary">BẢNG ĐIỀU KHIỂN</h2>
+        <p class="text-muted">Tổng quan hệ thống quản lý</p>
+    </div>
+</div>
+
+<div class="row g-4 justify-content-center">
+    <div class="col-md-6 col-lg-3">
+        <div class="card card-dashboard h-100 bg-white shadow-sm">
+            <div class="card-body text-center p-4">
+                <div class="rounded-circle bg-primary bg-opacity-10 p-3 d-inline-block mb-3">
+                    <i class="fa-solid fa-box-open fs-2 text-primary"></i>
+                </div>
+                <h5 class="card-title fw-bold">Sản Phẩm</h5>
+                <p class="card-text text-muted small">Quản lý kho hàng, giá cả và thông tin sản phẩm.</p>
+                <a asp-action="ManageProducts" class="btn btn-primary w-100 rounded-pill mt-2">Quản lý ngay</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+        <div class="card card-dashboard h-100 bg-white shadow-sm">
+            <div class="card-body text-center p-4">
+                <div class="rounded-circle bg-success bg-opacity-10 p-3 d-inline-block mb-3">
+                    <i class="fa-solid fa-file-invoice-dollar fs-2 text-success"></i>
+                </div>
+                <h5 class="card-title fw-bold">Đơn Hàng</h5>
+                <p class="card-text text-muted small">Xử lý đơn đặt hàng và cập nhật trạng thái.</p>
+                <a asp-action="ManageOrders" class="btn btn-success w-100 rounded-pill mt-2">Xem đơn hàng</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+        <div class="card card-dashboard h-100 bg-white shadow-sm">
+            <div class="card-body text-center p-4">
+                <div class="rounded-circle bg-info bg-opacity-10 p-3 d-inline-block mb-3">
+                    <i class="fa-solid fa-users fs-2 text-info"></i>
+                </div>
+                <h5 class="card-title fw-bold">Khách Hàng</h5>
+                <p class="card-text text-muted small">Danh sách người dùng đã đăng ký thành viên.</p>
+                <a asp-action="ManageUsers" class="btn btn-info text-white w-100 rounded-pill mt-2">Xem danh sách</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+        <div class="card card-dashboard h-100 bg-white shadow-sm">
+            <div class="card-body text-center p-4">
+                <div class="rounded-circle bg-warning bg-opacity-10 p-3 d-inline-block mb-3">
+                    <i class="fa-solid fa-comments fs-2 text-warning"></i>
+                </div>
+                <h5 class="card-title fw-bold">Phản Hồi</h5>
+                <p class="card-text text-muted small">Hộp thư góp ý và liên hệ từ khách hàng.</p>
+                <a asp-action="ManageContacts" class="btn btn-warning text-white w-100 rounded-pill mt-2">Xem tin nhắn</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3">
+        <div class="card card-dashboard h-100 bg-white shadow-sm">
+            <div class="card-body text-center p-4">
+                <div class="rounded-circle bg-danger bg-opacity-10 p-3 d-inline-block mb-3">
+                    <i class="fa-solid fa-chart-pie fs-2 text-danger"></i>
+                </div>
+                <h5 class="card-title fw-bold">Báo Cáo</h5>
+                <p class="card-text text-muted small">Thống kê doanh thu và xuất dữ liệu.</p>
+                <a asp-action="RevenueReport" class="btn btn-danger text-white w-100 rounded-pill mt-2">Xem báo cáo</a>
+            </div>
+        </div>
+    </div> 
+</div>

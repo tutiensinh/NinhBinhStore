@@ -1,0 +1,142 @@
+﻿@model NinhBinhStore.Models.Product
+@{
+    ViewData["Title"] = Model.Tensp;
+}
+
+<div class="container my-5">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index" class="text-decoration-none">Trang chủ</a></li>
+            <li class="breadcrumb-item"><a href="/Product/Category?loai=@Model.Loai">@Model.Loai</a></li>
+            <li class="breadcrumb-item active" aria-current="page">@Model.Tensp</li>
+        </ol>
+    </nav>
+
+    <div class="row g-5">
+        <div class="col-md-6" data-aos="fade-right">
+            <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                <img src="/@Model.Hinhanh" class="img-fluid w-100" alt="@Model.Tensp" style="max-height: 500px; object-fit: contain;">
+            </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-left">
+            <span class="badge bg-primary bg-opacity-10 text-primary mb-2 px-3 py-2 rounded-pill">@Model.Loai</span>
+            <h1 class="fw-bold mb-3">@Model.Tensp</h1>
+
+            <div class="mb-4">
+                <h2 class="text-danger fw-bold display-6">@Model.Dongia.ToString("N0") đ</h2>
+                <div class="text-muted small">Tình trạng: <span class="fw-bold text-success">@(Model.Tonkho > 0 ? "Còn hàng" : "Hết hàng")</span></div>
+            </div>
+
+            <p class="lead text-muted mb-4">@Model.Mota</p>
+
+            <hr class="my-4">
+
+            <div class="row g-3 align-items-center mb-4">
+                <div class="col-auto">
+                    <label class="col-form-label fw-bold">Số lượng:</label>
+                </div>
+                <div class="col-auto">
+                    <div class="input-group" style="width: 140px;">
+                        <button class="btn btn-outline-secondary" type="button" onclick="updateQty(-1)">-</button>
+                        <input type="number" id="quantity" class="form-control text-center" value="1" min="1" max="@Model.Tonkho">
+                        <button class="btn btn-outline-secondary" type="button" onclick="updateQty(1)">+</button>
+                    </div>
+                </div>
+                <div class="col-auto text-muted small">
+                    (@Model.Tonkho sản phẩm có sẵn)
+                </div>
+            </div>
+
+            <div class="d-flex gap-3">
+                <button onclick="addToCart(@Model.Id)" class="btn btn-outline-primary btn-lg flex-grow-1 rounded-pill fw-bold">
+                    <i class="fa-solid fa-cart-plus me-2"></i>Thêm Vào Giỏ
+                </button>
+                <button onclick="buyNow(@Model.Id)" class="btn btn-primary btn-lg flex-grow-1 rounded-pill fw-bold shadow">
+                    <i class="fa-solid fa-bolt me-2"></i>Mua Ngay
+                </button>
+            </div>
+
+            <div class="row mt-5 text-center g-2">
+                <div class="col-4">
+                    <div class="p-3 border rounded bg-light">
+                        <i class="fa-solid fa-rotate-left text-primary mb-2"></i>
+                        <div class="small fw-bold">Đổi trả 7 ngày</div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="p-3 border rounded bg-light">
+                        <i class="fa-solid fa-shield text-primary mb-2"></i>
+                        <div class="small fw-bold">Bảo hành 12T</div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="p-3 border rounded bg-light">
+                        <i class="fa-solid fa-truck text-primary mb-2"></i>
+                        <div class="small fw-bold">Freeship nội thành</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function updateQty(change) {
+            var el = document.getElementById('quantity');
+            var val = parseInt(el.value) + change;
+            var max = parseInt(el.getAttribute('max'));
+            if (val < 1) val = 1;
+            if (val > max) val = max;
+            el.value = val;
+        }
+
+        // HÀM XỬ LÝ CHUNG CHO MUA & THÊM
+        function processCart(id, type) {
+            var qty = document.getElementById('quantity').value;
+
+            fetch(`/Cart/Add?id=${id}&quantity=${qty}&type=${type}`)
+                .then(response => {
+                    // Nếu chưa đăng nhập (Lỗi 401)
+                    if (response.status === 401) {
+                        Swal.fire({
+                            icon: 'warning',
+                            title: 'Chưa đăng nhập',
+                            text: 'Bạn cần đăng nhập để thực hiện chức năng này.',
+                            showCancelButton: true,
+                            confirmButtonText: 'Đăng nhập ngay',
+                            cancelButtonText: 'Hủy'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.location.href = '/Account/Login';
+                            }
+                        });
+                        return null; // Dừng xử lý
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (!data) return; // Nếu đã xử lý lỗi 401 ở trên
+
+                    if (type === 'buy' && data.redirect) {
+                        // Nếu là Mua ngay -> Chuyển hướng
+                        window.location.href = data.redirect;
+                    }
+                    else if (data.success) {
+                        // Nếu là Thêm vào giỏ -> Hiện popup xanh
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Thành công!',
+                            text: 'Đã thêm sản phẩm vào giỏ hàng.',
+                            confirmButtonText: 'OK'
+                        }).then(() => location.reload());
+                    }
+                });
+        }
+
+        // Gắn hàm vào nút
+        function addToCart(id) { processCart(id, 'add'); }
+        function buyNow(id) { processCart(id, 'buy'); }
+    </script>
+}

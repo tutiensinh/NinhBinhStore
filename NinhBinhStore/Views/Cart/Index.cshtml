@@ -1,0 +1,146 @@
+﻿@model NinhBinhStore.Models.Cart
+@{
+    ViewData["Title"] = "Giỏ hàng";
+}
+
+<div class="container my-5">
+    <h2 class="fw-bold mb-4 text-center">Giỏ hàng của bạn</h2>
+
+    @if (Model.Items.Count == 0)
+    {
+        <div class="text-center py-5">
+            <i class="fa-solid fa-cart-arrow-down display-1 text-muted mb-3"></i>
+            <h4 class="text-muted">Giỏ hàng đang trống</h4>
+            <a asp-controller="Home" asp-action="Index" class="btn btn-primary mt-3 rounded-pill px-4">
+                Tiếp tục mua sắm
+            </a>
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card border-0 shadow-sm rounded-4 mb-4">
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table align-middle mb-0">
+                                <thead class="bg-light">
+                                    <tr>
+                                        <th class="ps-4">Sản phẩm</th>
+                                        <th class="text-center">Giá</th>
+                                        <th class="text-center">Số lượng</th>
+                                        <th class="text-center">Tổng</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model.Items)
+                                    {
+                                        <tr id="row-@item.Product.Id">
+                                            <td class="ps-4">
+                                                <div class="d-flex align-items-center">
+                                                    <img src="/@item.Product.Hinhanh" class="rounded border me-3" style="width: 70px; height: 70px; object-fit: cover;" onerror="this.src='/images/no-image.png'">
+                                                    <div>
+                                                        <h6 class="mb-0 fw-bold text-dark">@item.Product.Tensp</h6>
+                                                        <small class="text-muted">ID: @item.Product.Id</small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">@item.Product.Dongia.ToString("N0") đ</td>
+
+                                            <td class="text-center">
+                                                <div class="input-group input-group-sm mx-auto" style="width: 100px;">
+                                                    <button class="btn btn-outline-secondary" type="button" onclick="changeQty(@item.Product.Id, -1)">-</button>
+                                                    <input type="text" class="form-control text-center quantity-input" id="qty-@item.Product.Id" value="@item.Quantity" readonly>
+                                                    <button class="btn btn-outline-secondary" type="button" onclick="changeQty(@item.Product.Id, 1)">+</button>
+                                                </div>
+                                            </td>
+
+                                            <td class="text-center fw-bold text-primary" id="total-@item.Product.Id">
+                                                @item.TotalPrice.ToString("N0") đ
+                                            </td>
+                                            <td class="text-end pe-4">
+                                                <button onclick="removeItem(@item.Product.Id)" class="btn btn-link text-danger p-0">
+                                                    <i class="fa-solid fa-trash"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <a asp-controller="Home" asp-action="Index" class="text-decoration-none">
+                    <i class="fa-solid fa-arrow-left me-1"></i> Tiếp tục mua sắm
+                </a>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card border-0 shadow-sm rounded-4 bg-light">
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold mb-4">Cộng giỏ hàng</h5>
+                        <div class="d-flex justify-content-between mb-3">
+                            <span>Tạm tính:</span>
+                            <span class="fw-bold" id="cart-subtotal">@Model.TotalCartPrice.ToString("N0") đ</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-4 pb-3 border-bottom">
+                            <span>Phí vận chuyển:</span>
+                            <span class="text-success">Miễn phí</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-4">
+                            <span class="h5 fw-bold">Tổng tiền:</span>
+                            <span class="h5 fw-bold text-danger" id="cart-total">@Model.TotalCartPrice.ToString("N0") đ</span>
+                        </div>
+
+                        <a href="/Checkout/Shipping" class="btn btn-primary w-100 py-3 rounded-pill fw-bold shadow">TIẾN HÀNH THANH TOÁN</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script>
+        // Hàm thay đổi số lượng (Ajax)
+        function changeQty(id, amount) {
+            let input = document.getElementById('qty-' + id);
+            let newQty = parseInt(input.value) + amount;
+            if (newQty < 1) return;
+
+            updateCart(id, newQty);
+        }
+
+        // Gọi Server cập nhật
+        function updateCart(id, qty) {
+            fetch(`/Cart/Update?id=${id}&quantity=${qty}`)
+                .then(res => res.json())
+                .then(data => {
+                    // Cập nhật giao diện
+                    document.getElementById('qty-' + id).value = qty;
+                    document.getElementById('total-' + id).innerText = data.itemTotal;
+                    document.getElementById('cart-subtotal').innerText = data.cartTotal;
+                    document.getElementById('cart-total').innerText = data.cartTotal;
+                });
+        }
+
+        // Hàm Xóa (Giữ nguyên popup đỏ)
+        function removeItem(id) {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Bạn chắc chứ?',
+                text: "Xóa sản phẩm này khỏi giỏ?",
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                confirmButtonText: 'Xóa',
+                cancelButtonText: 'Hủy'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = `/Cart/Remove?id=${id}`;
+                }
+            });
+        }
+    </script>
+}

@@ -1,0 +1,105 @@
+﻿@{
+    ViewData["Title"] = "Trang chủ";
+    // Lấy dữ liệu từ ViewBag (do Controller truyền xuống)
+    var newest = ViewBag.NewestProducts as List<NinhBinhStore.Models.Product>;
+    var kitchen = ViewBag.KitchenProducts as List<NinhBinhStore.Models.Product>;
+    var cleaning = ViewBag.CleaningProducts as List<NinhBinhStore.Models.Product>;
+    var sale = ViewBag.SaleProducts as List<NinhBinhStore.Models.Product>;
+    var large = ViewBag.LargeAppliances as List<NinhBinhStore.Models.Product>;
+}
+
+<header class="hero-section position-relative overflow-hidden" style="height: 500px;">
+    <video playsinline autoplay muted loop id="bg-video" class="w-100 h-100 object-fit-cover position-absolute top-0 start-0" style="z-index: -1; filter: brightness(0.6);">
+        <source src="/images/products/banner-video.mp4" type="video/mp4">
+    </video>
+    <div class="container h-100 d-flex flex-column justify-content-center align-items-center text-center text-white position-relative" style="z-index: 1;">
+        <h1 class="display-3 fw-bold mb-3" data-aos="fade-up">Thế Giới Đồ Gia Dụng</h1>
+        <p class="lead mb-4" data-aos="fade-up" data-aos-delay="100">Mang tiện nghi và phong cách hiện đại đến ngôi nhà của bạn</p>
+        <a href="#new-products" class="btn btn-warning btn-lg rounded-pill px-5 fw-bold shadow" data-aos="fade-up" data-aos-delay="200">Khám Phá Ngay</a>
+    </div>
+</header>
+
+<div class="bg-white py-4 shadow-sm mb-5">
+    <div class="container">
+        <div class="row text-center g-4">
+            <div class="col-md-4" data-aos="fade-up">
+                <i class="fa-solid fa-truck-fast fs-2 text-primary mb-2"></i>
+                <h5 class="fw-bold">Giao Hàng Toàn Quốc</h5>
+                <p class="text-muted small mb-0">Miễn phí vận chuyển đơn từ 500k</p>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <i class="fa-solid fa-shield-halved fs-2 text-primary mb-2"></i>
+                <h5 class="fw-bold">Bảo Hành Chính Hãng</h5>
+                <p class="text-muted small mb-0">Cam kết chất lượng 100%</p>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <i class="fa-solid fa-headset fs-2 text-primary mb-2"></i>
+                <h5 class="fw-bold">Hỗ Trợ 24/7</h5>
+                <p class="text-muted small mb-0">Hotline tư vấn nhiệt tình</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container my-5">
+    <section id="new-products" class="mb-5">
+        <div class="d-flex justify-content-between align-items-end border-bottom pb-2 mb-4">
+            <h2 class="fw-bold text-primary m-0"><i class="fa-solid fa-bolt me-2"></i>Hàng Mới Về</h2>
+            <a href="/Product" class="text-decoration-none fw-bold">Xem tất cả <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+            @if (newest != null)
+            {
+                foreach (var p in newest)
+                {
+                    <partial name="_ProductCard" model="p" />
+                }
+            }
+        </div>
+    </section>
+
+    <section class="mb-5">
+        <div class="d-flex justify-content-between align-items-end border-bottom pb-2 mb-4">
+            <h2 class="fw-bold text-dark m-0"><i class="fa-solid fa-kitchen-set me-2"></i>Thiết Bị Nhà Bếp</h2>
+            <a href="/Product/Category?loai=Nhà bếp" class="text-decoration-none fw-bold">Xem thêm</a>
+        </div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+            @if (kitchen != null)
+            {
+                foreach (var p in kitchen)
+                {
+                    <partial name="_ProductCard" model="p" />
+                }
+            }
+        </div>
+    </section>
+
+    <section class="mb-5 bg-danger bg-opacity-10 p-4 rounded-4">
+        <div class="d-flex justify-content-between align-items-end mb-4">
+            <h2 class="fw-bold text-danger m-0"><i class="fa-solid fa-tags me-2"></i>Khuyến Mãi Sốc</h2>
+            <a href="/Product/Category?loai=Khuyến mãi" class="text-decoration-none fw-bold text-danger">Săn ngay <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+            @if (sale != null)
+            {
+                foreach (var p in sale)
+                {
+                    <partial name="_ProductCard" model="p" />
+                }
+            }
+        </div>
+    </section>
+</div>
+
+<div class="bg-light py-5">
+    <div class="container text-center">
+        <h4 class="text-uppercase text-muted fw-bold mb-4">Đối Tác Thương Hiệu</h4>
+        <div class="d-flex flex-wrap justify-content-center gap-5 opacity-75 grayscale-hover">
+            <img src="https://logo.clearbit.com/sunhouse.com.vn" height="40" alt="Sunhouse">
+            <img src="https://logo.clearbit.com/panasonic.com" height="40" alt="Panasonic">
+            <img src="https://logo.clearbit.com/samsung.com" height="40" alt="Samsung">
+            <img src="https://logo.clearbit.com/lg.com" height="40" alt="LG">
+            <img src="https://logo.clearbit.com/philips.com" height="40" alt="Philips">
+        </div>
+    </div>
+</div>

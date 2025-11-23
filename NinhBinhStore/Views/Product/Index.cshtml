@@ -1,0 +1,31 @@
+﻿@model List<NinhBinhStore.Models.Product>
+@{
+    ViewData["Title"] = "Tất cả sản phẩm";
+}
+
+<div class="container my-5">
+    <nav aria-label="breadcrumb" class="mb-4" data-aos="fade-right">
+        <ol class="breadcrumb bg-light p-3 rounded-3 shadow-sm">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index" class="text-decoration-none text-muted"><i class="fa-solid fa-house"></i> Trang chủ</a></li>
+            <li class="breadcrumb-item active fw-bold text-primary" aria-current="page">Tất cả sản phẩm</li>
+        </ol>
+    </nav>
+
+    @if (Model == null || Model.Count == 0)
+    {
+        <div class="alert alert-warning text-center py-5 shadow-sm rounded-4" role="alert">
+            <i class="fa-solid fa-box-open display-1 mb-3 text-warning"></i>
+            <h4>Hiện chưa có sản phẩm nào.</h4>
+            <p class="text-muted">Vui lòng quay lại sau.</p>
+        </div>
+    }
+    else
+    {
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+            @foreach (var p in Model)
+            {
+                <partial name="_ProductCard" model="p" />
+            }
+        </div>
+    }
+</div>

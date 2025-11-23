@@ -1,0 +1,199 @@
+﻿@model NinhBinhStore.Models.Order
+@{
+    Layout = null; // Không dùng Layout chung để trang in sạch sẽ
+}
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <title>In hóa đơn #@Model.Id</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #e9ecef;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        /* Khung hóa đơn A4 */
+        .invoice-page {
+            background-color: #fff;
+            width: 210mm;
+            min-height: 297mm;
+            margin: 30px auto;
+            padding: 10mm;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .invoice-content {
+            border: 1px dashed #000; /* Viền nét đứt */
+            padding: 20px;
+            height: 100%;
+            min-height: 270mm;
+            position: relative;
+        }
+
+        .header-title {
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 26px;
+            margin-bottom: 5px;
+        }
+
+        .shop-info {
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .info-label {
+            font-weight: bold;
+            min-width: 100px;
+            display: inline-block;
+        }
+
+        /* Bảng sản phẩm */
+        .table-invoice {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+            .table-invoice th, .table-invoice td {
+                border: 1px solid #000;
+                padding: 8px;
+                font-size: 15px;
+            }
+
+            .table-invoice th {
+                background-color: #f0f0f0;
+                text-align: center;
+                font-weight: bold;
+            }
+
+        .signature-section {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            padding: 0 30px;
+        }
+
+        .signature-box {
+            text-align: center;
+        }
+
+        /* Ẩn nút khi in */
+        @@media print {
+            body
+
+        {
+            background-color: #fff;
+        }
+
+        .invoice-page {
+            margin: 0;
+            box-shadow: none;
+            width: 100%;
+        }
+
+        .action-bar {
+            display: none !important;
+        }
+
+        }
+    </style>
+</head>
+<body>
+
+    <div class="action-bar text-center py-3 sticky-top bg-dark bg-opacity-75 mb-3">
+        <span class="text-white me-3">Đang xem trước bản in. Nhấn nút bên dưới để lưu.</span>
+        <button onclick="window.print()" class="btn btn-primary">
+            <i class="bi bi-printer"></i> Xác nhận In / Lưu PDF
+        </button>
+        <button onclick="captureInvoice()" class="btn btn-success">
+            <i class="bi bi-image"></i> Tải ảnh (JPG)
+        </button>
+        <button onclick="window.close()" class="btn btn-secondary">Đóng</button>
+    </div>
+
+    <div class="invoice-page" id="capture-area">
+        <div class="invoice-content">
+
+            <div class="header-title">HÓA ĐƠN BÁN HÀNG</div>
+            <div class="shop-info">
+                <strong>NINH BÌNH STORE</strong><br>
+                Đ/c: Xã Ninh Xuân, Huyện Hoa Lư, Tỉnh Ninh Bình<br>
+                Hotline: 1900 1234 - Website: ninhbinhstore.com
+            </div>
+
+            <hr style="border-top: 1px dashed #000;">
+
+            <div class="row mb-3">
+                <div class="col-7">
+                    <div><span class="info-label">Khách hàng:</span> @Model.Hoten</div>
+                    <div><span class="info-label">Email:</span> @Model.Email</div>
+                    <div><span class="info-label">Địa chỉ:</span> @Model.Diachi</div>
+                </div>
+                <div class="col-5 text-end">
+                    <div><strong>Mã đơn:</strong> #@Model.Id</div>
+                    <div><strong>Ngày đặt:</strong> @Model.Ngaydat.ToString("dd/MM/yyyy HH:mm")</div>
+                </div>
+            </div>
+
+            <table class="table-invoice">
+                <thead>
+                    <tr>
+                        <th style="width: 50px;">STT</th>
+                        <th>Tên Sản Phẩm</th>
+                        <th style="width: 60px;">SL</th>
+                        <th>Đơn Giá</th>
+                        <th>Thành Tiền</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        int stt = 1;
+                    }
+                    @foreach (var item in Model.Items)
+                    {
+                        <tr>
+                            <td class="text-center">@(stt++)</td>
+                            <td>@item.Tensp</td>
+                            <td class="text-center">@item.Soluong</td>
+                            <td class="text-end">@item.Dongia.ToString("#,##0")</td>
+                            <td class="text-end">@item.TotalPrice.ToString("#,##0")</td>
+                        </tr>
+                    }
+                    <tr>
+                        <td colspan="4" class="text-end fw-bold">Tổng Cộng:</td>
+                        <td class="text-end fw-bold fs-5">@Model.Tongtien.ToString("#,##0") đ</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="signature-section">
+                <div class="signature-box">
+                    <strong>Người mua hàng</strong><br>
+                    <span class="fst-italic small">(Ký, ghi rõ họ tên)</span>
+                </div>              
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script>
+        function captureInvoice() {
+            const invoice = document.getElementById("capture-area");
+            html2canvas(invoice).then(canvas => {
+                const link = document.createElement("a");
+                link.download = "HoaDon_@(Model.Id).jpg";
+                link.href = canvas.toDataURL("image/jpeg");
+                link.click();
+            });
+        }
+    </script>
+</body>
+</html>

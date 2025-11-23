@@ -1,0 +1,28 @@
+﻿@model NinhBinhStore.Models.Product
+<div class="col" data-aos="zoom-in">
+    <div class="card h-100 product-card border-0 shadow-sm">
+        <div class="position-relative overflow-hidden">
+            <img src="/@Model.Hinhanh" class="card-img-top p-3" alt="@Model.Tensp" style="height: 200px; object-fit: contain;">
+            @if (Model.Loai == "Khuyến mãi")
+            {
+                <span class="badge bg-danger position-absolute top-0 start-0 m-3">SALE</span>
+            }
+        </div>
+        <div class="card-body d-flex flex-column">
+            <small class="text-muted mb-1">@Model.Loai</small>
+            <h6 class="card-title fw-bold text-dark text-truncate" title="@Model.Tensp">
+                <a asp-controller="Product" asp-action="Detail" asp-route-id="@Model.Id" class="text-decoration-none text-dark">@Model.Tensp</a>
+            </h6>
+            <div class="mt-auto">
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="fw-bold text-danger fs-5">@Model.Dongia.ToString("N0") đ</span>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer bg-white border-0 p-3 pt-0">
+            <a asp-controller="Product" asp-action="Detail" asp-route-id="@Model.Id" class="btn btn-outline-primary w-100 rounded-pill fw-bold">
+                <i class="fa-solid fa-cart-plus me-1"></i> Xem Chi Tiết
+            </a>
+        </div>
+    </div>
+</div>

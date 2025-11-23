@@ -1,0 +1,80 @@
+﻿@model List<NinhBinhStore.Models.Order>
+@{
+    ViewData["Title"] = "Lịch sử mua hàng";
+}
+
+<div class="container my-5" style="max-width: 900px;">
+    <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb bg-light p-3 rounded-3 shadow-sm">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index" class="text-decoration-none text-muted"><i class="fa-solid fa-house"></i> Trang chủ</a></li>
+            <li class="breadcrumb-item active fw-bold text-primary" aria-current="page">Lịch sử mua hàng</li>
+        </ol>
+    </nav>
+
+    <h3 class="fw-bold mb-4">Đơn hàng của tôi</h3>
+
+    @if (Model == null || Model.Count == 0)
+    {
+        <div class="alert alert-info text-center py-5 shadow-sm border-0 rounded-4">
+            <i class="fa-solid fa-receipt display-1 mb-3 text-info"></i>
+            <h4>Bạn chưa có đơn hàng nào!</h4>
+            <p class="text-muted">Hãy dạo một vòng và chọn món đồ yêu thích nhé.</p>
+            <a asp-controller="Home" asp-action="Index" class="btn btn-primary mt-2 rounded-pill">Mua sắm ngay</a>
+        </div>
+    }
+    else
+    {
+        <div class="accordion" id="orderAccordion">
+            @foreach (var order in Model)
+            {
+                <div class="accordion-item border-0 shadow-sm mb-3 rounded-3 overflow-hidden">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#order-@order.Id">
+                            <div class="d-flex w-100 justify-content-between align-items-center me-3">
+                                <div>
+                                    <span class="fw-bold text-dark">Đơn hàng #@order.Id</span>
+                                    <small class="text-muted d-block">@order.Ngaydat.ToString("dd/MM/yyyy HH:mm")</small>
+                                </div>
+                                <div>
+                                    @{
+                                        string statusClass = order.Trangthai switch
+                                        {
+                                            "Hoàn thành" => "bg-success",
+                                            "Đang giao" => "bg-info text-dark",
+                                            "Hủy" => "bg-danger",
+                                            _ => "bg-warning text-dark"
+                                        };
+                                    }
+                                    <span class="badge @statusClass rounded-pill">@order.Trangthai</span>
+                                </div>
+                            </div>
+                        </button>
+                    </h2>
+                    <div id="order-@order.Id" class="accordion-collapse collapse" data-bs-parent="#orderAccordion">
+                        <div class="accordion-body bg-light">
+                            <ul class="list-group list-group-flush rounded-3 mb-3">
+                                @foreach (var item in order.Items)
+                                {
+                                    <li class="list-group-item d-flex align-items-center bg-white">
+                                        <img src="/@item.Hinhanh" class="rounded border me-3" style="width: 60px; height: 60px; object-fit: cover;" onerror="this.src='/images/no-image.png'">
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-0 fw-bold">@item.Tensp</h6>
+                                            <small class="text-muted">@item.Soluong x @item.Dongia.ToString("N0") đ</small>
+                                        </div>
+                                        <div class="fw-bold text-primary">
+                                            @item.TotalPrice.ToString("N0") đ
+                                        </div>
+                                    </li>
+                                }
+                            </ul>
+                            <div class="d-flex justify-content-between align-items-center border-top pt-3">
+                                <span class="text-muted"><i class="fa-solid fa-location-dot me-1"></i> @order.Diachi</span>
+                                <h5 class="fw-bold text-danger m-0">Tổng: @order.Tongtien.ToString("N0") đ</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>

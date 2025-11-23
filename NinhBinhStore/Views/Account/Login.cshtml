@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "Đăng nhập";
+    Layout = "_AuthLayout"; // Sử dụng layout không header/footer
+}
+
+<div class="glass-card" style="max-width: 450px;">
+    <div class="text-center mb-4">
+        <h2 class="auth-title">Đăng Nhập</h2>
+        <p class="text-muted">Chào mừng trở lại Ninh Bình Store</p>
+    </div>
+
+    @if (ViewBag.ErrorMessage != null)
+    {
+        <div class="alert alert-danger text-center">
+            <i class="fa-solid fa-circle-exclamation me-2"></i>@ViewBag.ErrorMessage
+        </div>
+    }
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success text-center">
+            <i class="fa-solid fa-check-circle me-2"></i>@TempData["SuccessMessage"]
+        </div>
+    }
+
+    <form asp-controller="Account" asp-action="Login" method="post">
+        <div class="mb-3">
+            <div class="input-group">
+                <span class="input-group-text"><i class="fa-solid fa-user"></i></span> <input type="text" name="tendangnhap" class="form-control form-control-lg" placeholder="Tên đăng nhập" required autofocus>
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <div class="input-group">
+                <span class="input-group-text"><i class="fa-solid fa-lock"></i></span> <input type="password" name="matkhau" id="loginPass" class="form-control form-control-lg" placeholder="Mật khẩu" required>
+                <button class="btn btn-outline-secondary bg-white text-secondary" type="button" onclick="togglePassword('loginPass', 'iconLogin')">
+                    <i id="iconLogin" class="fa-solid fa-eye"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="d-grid mb-3">
+            <button type="submit" class="btn btn-auth btn-lg shadow-sm">ĐĂNG NHẬP</button>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mt-4">
+            <a asp-action="ForgotPassword" class="text-decoration-none text-muted small">Quên mật khẩu?</a>
+            <div class="small">
+                Chưa có tài khoản? <a asp-action="Register" class="auth-link">Đăng ký ngay</a>
+            </div>
+        </div>
+    </form>
+</div>

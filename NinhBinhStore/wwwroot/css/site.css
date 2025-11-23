@@ -1,0 +1,86 @@
+/* --- Global --- */
+:root {
+    --primary-color: #003366; /* Xanh Navy */
+    --secondary-color: #ff6600; /* Cam rực rỡ */
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.5);
+}
+
+/* --- Auth Page Styles (Đăng nhập/Đăng ký) --- */
+.auth-body {
+    /* Ảnh nền từ file JSP cũ */
+    background-image: url('https://images.unsplash.com/photo-1556911220-bff31c812dba'); /* [cite: 38] */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-container {
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Hiệu ứng Frosted Glass (Kính mờ) */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px); /* [cite: 41] */
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* [cite: 42] */
+    width: 100%;
+}
+
+.auth-title {
+    color: var(--primary-color);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Tùy chỉnh Input Group cho đẹp hơn */
+.input-group-text {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.3); /* Màu cam khi focus */
+    border-color: var(--secondary-color);
+}
+
+.btn-auth {
+    background: linear-gradient(45deg, var(--primary-color), #00509e);
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 12px;
+    transition: all 0.3s ease;
+}
+
+    .btn-auth:hover {
+        background: linear-gradient(45deg, #00509e, var(--primary-color));
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 51, 102, 0.4);
+        color: white;
+    }
+
+.auth-link {
+    color: var(--secondary-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+    .auth-link:hover {
+        text-decoration: underline;
+        color: #e65c00;
+    }

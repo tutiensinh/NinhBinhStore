@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Tra cứu đơn hàng";
+}
+
+<div class="container my-5" style="max-width: 600px;">
+    <div class="card p-4 p-md-5 shadow-sm border-0 rounded-4">
+        <div class="text-center mb-4">
+            <div class="bg-primary bg-opacity-10 d-inline-block p-3 rounded-circle mb-3">
+                <i class="fa-solid fa-magnifying-glass fs-2 text-primary"></i>
+            </div>
+            <h2 class="fw-bold">Tra cứu đơn hàng</h2>
+            <p class="text-muted">Nhập địa chỉ Email bạn đã dùng để đặt hàng để kiểm tra tình trạng đơn hàng.</p>
+        </div>
+
+        <form asp-action="Lookup" method="POST">
+            <div class="mb-4">
+                <label class="form-label fw-bold">Email của bạn</label>
+                <div class="input-group">
+                    <span class="input-group-text bg-light"><i class="fa-solid fa-envelope text-muted"></i></span>
+                    <input type="email" class="form-control form-control-lg" name="email" placeholder="vidu@gmail.com" required>
+                </div>
+            </div>
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary btn-lg fw-bold rounded-pill shadow-sm">
+                    <i class="fa-solid fa-search me-2"></i> Tra Cứu Ngay
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

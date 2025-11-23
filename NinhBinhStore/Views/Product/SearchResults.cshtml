@@ -1,0 +1,39 @@
+﻿@model List<NinhBinhStore.Models.Product>
+@{
+    ViewData["Title"] = "Kết quả tìm kiếm";
+    string query = ViewBag.SearchQuery as string;
+}
+
+<div class="container my-5">
+    <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb bg-light p-3 rounded-3 shadow-sm">
+            <li class="breadcrumb-item"><a href="/" class="text-decoration-none text-muted">Trang chủ</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Tìm kiếm</li>
+        </ol>
+    </nav>
+
+    <div class="mb-4">
+        <h3 class="fw-bold">Kết quả tìm kiếm cho: "<span class="text-primary">@query</span>"</h3>
+        <p class="text-muted">Tìm thấy @(Model != null ? Model.Count : 0) sản phẩm phù hợp.</p>
+    </div>
+
+    @if (Model == null || Model.Count == 0)
+    {
+        <div class="alert alert-light text-center py-5 shadow-sm border-0 rounded-4" role="alert">
+            <i class="fa-solid fa-magnifying-glass display-1 text-muted mb-3"></i>
+            <h4 class="text-muted">Rất tiếc, không tìm thấy sản phẩm nào!</h4>
+            <p class="text-muted small">Hãy thử tìm với từ khóa khác chung chung hơn.</p>
+            <a href="/" class="btn btn-primary mt-3 rounded-pill">Về trang chủ</a>
+        </div>
+    }
+    else
+    {
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+            @foreach (var p in Model)
+            {
+                // Tái sử dụng thẻ sản phẩm đã làm
+                <partial name="_ProductCard" model="p" />
+            }
+        </div>
+    }
+</div>

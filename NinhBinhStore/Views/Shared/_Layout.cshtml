@@ -1,0 +1,227 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Ninh Bình Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="bg-light border-bottom d-none d-lg-block small py-1">
+        <div class="container d-flex justify-content-between">
+            <div>
+                <a href="tel:19001234" class="text-decoration-none text-muted me-3"><i class="fa-solid fa-phone me-1"></i> Hotline: 1900 1234</a>
+                <a href="mailto:info@ninhbinhstore.com" class="text-decoration-none text-muted"><i class="fa-solid fa-envelope me-1"></i> info@ninhbinhstore.com</a>
+            </div>
+            <div>
+                <a asp-controller="Order" asp-action="History" class="text-decoration-none text-muted"><i class="fa-solid fa-clock-rotate-left me-1"></i> Lịch sử mua hàng</a>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm py-2">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center fw-bold fs-4 text-uppercase me-4" asp-controller="Home" asp-action="Index">
+                <i class="fa-solid fa-shop me-2 text-warning"></i>NinhBinhStore
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link px-2 text-nowrap @(ViewContext.RouteData.Values["Action"]?.ToString() == "Index" ? "active fw-bold text-white" : "")"
+                           asp-controller="Home" asp-action="Index">Trang chủ</a>
+                    </li>
+
+                    @await Component.InvokeAsync("CategoryMenu")
+
+                    <li class="nav-item">
+                        <a class="nav-link px-2 text-nowrap" asp-controller="Order" asp-action="Lookup">Tra cứu đơn hàng</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-2 text-nowrap" asp-controller="Home" asp-action="Contact">Liên hệ</a>
+                    </li>
+                </ul>
+
+                <form class="d-flex position-relative me-3" action="/Product/Search" method="get" style="width: 100%; max-width: 300px;">
+                    <div class="input-group input-group-sm">
+                        <input class="form-control border-0 rounded-start-pill ps-3" type="search" name="query" id="search-input"
+                               placeholder="Tìm sản phẩm..." autocomplete="off" value="@ViewBag.SearchQuery">
+                        <button class="btn btn-primary rounded-end-pill px-3" type="submit">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                    <div id="suggestion-box" class="list-group position-absolute w-100 mt-1 shadow rounded-3 overflow-hidden"
+                         style="top: 100%; z-index: 1050; display:none;"></div>
+                </form>
+
+                <div class="d-flex align-items-center gap-3">
+                    @{
+                        var hoten = HttpContextAccessor.HttpContext.Session.GetString("hoten");
+                        var role = HttpContextAccessor.HttpContext.Session.GetString("vaitro");
+                        var cartJson = HttpContextAccessor.HttpContext.Session.GetString("Cart");
+                        int cartCount = 0;
+                        if (!string.IsNullOrEmpty(cartJson))
+                        {
+                            try
+                            {
+                                var cart = System.Text.Json.JsonSerializer.Deserialize<NinhBinhStore.Models.Cart>(cartJson);
+                                cartCount = cart?.TotalItemCount ?? 0;
+                            }
+                            catch { cartCount = 0; }
+                        }
+                    }
+
+                    @if (!string.IsNullOrEmpty(hoten))
+                    {
+                        <div class="dropdown">
+                            <a class="text-decoration-none text-light dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown">
+                                <div class="bg-secondary bg-opacity-25 rounded-circle d-flex align-items-center justify-content-center me-2" style="width: 32px; height: 32px;">
+                                    <i class="fa-solid fa-user text-white small"></i>
+                                </div>
+                                <span class="d-none d-xl-inline-block text-truncate" style="max-width: 150px;">@hoten</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-2">
+                                @if (role == "admin")
+                                {
+                                    <li><a class="dropdown-item text-danger fw-bold" asp-controller="Admin" asp-action="Dashboard"><i class="fa-solid fa-gauge me-2"></i>Quản trị</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                }
+                                <li><a class="dropdown-item" asp-controller="Account" asp-action="Index">Tài khoản</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" asp-controller="Account" asp-action="Logout">Đăng xuất</a></li>
+                            </ul>
+                        </div>
+                    }
+                    else
+                    {
+                        <a asp-controller="Account" asp-action="Login" class="btn btn-outline-light btn-sm rounded-pill px-3">Đăng nhập</a>
+                    }
+
+                    <a asp-controller="Cart" asp-action="Index" class="position-relative text-light ms-1">
+                        <i class="fa-solid fa-cart-shopping fs-5"></i>
+                        @if (cartCount > 0)
+                        {
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger border border-dark" style="font-size: 0.65rem;">
+                                @cartCount
+                            </span>
+                        }
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    @RenderBody()
+
+    <footer class="bg-dark text-white pt-5 pb-4 mt-5">
+        <div class="container text-center text-md-start">
+            <div class="row">
+                <div class="col-md-3 col-lg-4 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold text-warning">NinhBinhStore</h6>
+                    <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #ffc107; height: 2px">
+                    <p class="small text-white-50">Mang đến những sản phẩm gia dụng chất lượng nhất với giá cả phải chăng, nâng tầm cuộc sống gia đình bạn.</p>
+                </div>
+                <div class="col-md-2 col-lg-2 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold">Sản phẩm</h6>
+                    <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #ffc107; height: 2px">
+                    <p><a href="/Product/Category?loai=Nhà bếp" class="text-white-50 text-decoration-none small">Đồ dùng bếp</a></p>
+                    <p><a href="/Product/Category?loai=Gia dụng lớn" class="text-white-50 text-decoration-none small">Thiết bị điện</a></p>
+                    <p><a href="/Product/Category?loai=Làm sạch" class="text-white-50 text-decoration-none small">Chăm sóc nhà cửa</a></p>
+                </div>
+                <div class="col-md-4 col-lg-3 mx-auto mb-md-0 mb-4">
+                    <h6 class="text-uppercase fw-bold">Liên hệ</h6>
+                    <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #ffc107; height: 2px">
+                    <p class="small"><i class="fa-solid fa-location-dot me-2"></i> Hoa Lư, Ninh Bình</p>
+                    <p class="small"><i class="fa-solid fa-envelope me-2"></i> info@ninhbinhstore.com</p>
+                    <p class="small"><i class="fa-solid fa-phone me-2"></i> 1900 1234</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-3 border-top border-secondary small">
+            © 2025 Copyright: <a class="text-white text-decoration-none fw-bold" href="/">NinhBinhStore.com</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+
+                // XỬ LÝ GỢI Ý TÌM KIẾM
+        document.addEventListener('DOMContentLoaded', function () {
+            const searchInput = document.getElementById('search-input');
+            const suggestionBox = document.getElementById('suggestion-box');
+
+            // Định dạng tiền tệ VNĐ
+            const formatter = new Intl.NumberFormat('vi-VN', {
+                style: 'currency',
+                currency: 'VND'
+            });
+
+            if (searchInput) {
+                searchInput.addEventListener('keyup', function () {
+                    const query = searchInput.value;
+
+                    if (query.length < 2) {
+                        suggestionBox.style.display = 'none';
+                        return;
+                    }
+
+                    // SỬA LỖI QUAN TRỌNG: Thêm "/Product/" vào trước SearchSuggest
+                    fetch('/Product/SearchSuggest?query=' + encodeURIComponent(query))
+                        .then(response => response.json())
+                        .then(products => {
+                            if (products.length > 0) {
+                                let html = '';
+                                products.forEach(product => {
+                                    // Lưu ý: Cấu trúc JSON trả về từ C# thường viết hoa chữ cái đầu (PascalCase)
+                                    // hoặc viết thường (camelCase) tùy cấu hình.
+                                    // Ở đây ta dùng cách an toàn lấy cả 2 trường hợp.
+                                    let id = product.id || product.Id;
+                                    let name = product.tensp || product.Tensp;
+                                    let price = product.dongia || product.Dongia;
+                                    let img = product.hinhanh || product.Hinhanh;
+
+                                    html += `
+                                        <a href="/Product/Detail?id=${id}" class="list-group-item list-group-item-action d-flex align-items-center">
+                                            <img src="/${img}" alt="${name}" style="width: 50px; height: 50px; object-fit: cover; margin-right: 10px;" class="rounded">
+                                            <div>
+                                                <div class="fw-bold text-dark">${name}</div>
+                                                <div class="text-danger small">${formatter.format(price)}</div>
+                                            </div>
+                                        </a>
+                                    `;
+                                });
+                                suggestionBox.innerHTML = html;
+                                suggestionBox.style.display = 'block';
+                            } else {
+                                suggestionBox.style.display = 'none';
+                            }
+                        })
+                        .catch(error => console.error('Lỗi gợi ý:', error));
+                });
+
+                // Ẩn khi click ra ngoài
+                document.addEventListener('click', function (e) {
+                    if (e.target.id !== 'search-input') {
+                        suggestionBox.style.display = 'none';
+                    }
+                });
+            }
+        });
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

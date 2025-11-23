@@ -1,0 +1,72 @@
+﻿@model List<NinhBinhStore.Models.Order>
+@{
+    ViewData["Title"] = "Kết quả tra cứu";
+}
+
+<div class="container my-5" style="max-width: 900px;">
+    <a asp-action="Lookup" class="text-decoration-none text-muted mb-3 d-inline-block">
+        <i class="fa-solid fa-arrow-left me-1"></i> Quay lại tra cứu
+    </a>
+
+    <h3 class="fw-bold mb-4">Kết quả tìm kiếm cho: <span class="text-primary">@ViewBag.SearchTerm</span></h3>
+
+    @if (Model == null || Model.Count == 0)
+    {
+        <div class="alert alert-warning text-center py-5 shadow-sm border-0 rounded-4">
+            <i class="fa-solid fa-file-circle-xmark display-1 mb-3 text-warning"></i>
+            <h4>Không tìm thấy đơn hàng nào!</h4>
+            <p class="text-muted">Vui lòng kiểm tra lại Email hoặc liên hệ bộ phận hỗ trợ.</p>
+        </div>
+    }
+    else
+    {
+        <div class="accordion" id="lookupAccordion">
+            @foreach (var order in Model)
+            {
+                <div class="accordion-item border-0 shadow-sm mb-3 rounded-3 overflow-hidden">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#res-@order.Id">
+                            <div class="d-flex w-100 justify-content-between align-items-center me-3">
+                                <span class="fw-bold text-dark">#@order.Id - @order.Ngaydat.ToString("dd/MM/yyyy")</span>
+                                <span class="badge bg-primary rounded-pill">@order.Trangthai</span>
+                            </div>
+                        </button>
+                    </h2>
+                    <div id="res-@order.Id" class="accordion-collapse collapse" data-bs-parent="#lookupAccordion">
+                        <div class="accordion-body bg-light">
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <p class="mb-1"><strong>Người nhận:</strong> @order.Hoten</p>
+                                    <p class="mb-1"><strong>Email:</strong> @order.Email</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p class="mb-1"><strong>Địa chỉ:</strong> @order.Diachi</p>
+                                </div>
+                            </div>
+
+                            <ul class="list-group list-group-flush rounded-3 mb-3">
+                                @foreach (var item in order.Items)
+                                {
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <img src="/@item.Hinhanh" alt="@item.Tensp" class="rounded border me-3"
+                                             style="width: 60px; height: 60px; object-fit: cover;"
+                                             onerror="this.src='/images/products/fan-1.jpg'">
+
+                                        <div class="flex-grow-1">
+                                            <span class="fw-bold d-block">@item.Tensp</span>
+                                            <div class="text-muted small">SL: @item.Soluong</div>
+                                        </div>
+                                        <span class="fw-bold text-dark">@item.TotalPrice.ToString("N0") đ</span>
+                                    </li>
+                                }
+                            </ul>
+                            <div class="text-end fw-bold text-danger fs-5">
+                                Tổng: @order.Tongtien.ToString("N0") đ
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>

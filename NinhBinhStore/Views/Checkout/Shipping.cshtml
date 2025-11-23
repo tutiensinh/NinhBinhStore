@@ -1,0 +1,81 @@
+﻿@using NinhBinhStore.Helpers
+@{
+    ViewData["Title"] = "Thông tin giao hàng";
+    // Lấy thông tin user từ session nếu có để điền sẵn
+    var hoten = Context.Session.GetString("hoten");
+    // var email = ... (nếu có lưu)
+}
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-7 pe-md-5">
+            <h4 class="mb-3 fw-bold text-primary">Thông tin giao hàng</h4>
+
+            <form asp-controller="Checkout" asp-action="Process" method="POST">
+                <input type="hidden" name="action" value="confirm_shipping">
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Họ và tên</label>
+                    <input type="text" class="form-control" name="fullName" value="@hoten" required>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">Email</label>
+                        <input type="email" class="form-control" name="email" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">Số điện thoại</label>
+                        <input type="tel" class="form-control" name="phone" required>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Địa chỉ nhận hàng</label>
+                    <input type="text" class="form-control" name="address" required placeholder="Số nhà, đường, phường/xã...">
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label fw-bold">Ghi chú đơn hàng (Tùy chọn)</label>
+                    <textarea class="form-control" name="note" rows="3" placeholder="Ví dụ: Giao hàng giờ hành chính..."></textarea>
+                </div>
+
+                <button class="btn btn-primary btn-lg w-100 py-3 fw-bold shadow-sm" type="submit">
+                    TIẾP TỤC ĐẾN THANH TOÁN <i class="fa-solid fa-arrow-right ms-2"></i>
+                </button>
+            </form>
+        </div>
+
+        <div class="col-md-5 mt-4 mt-md-0 ps-md-5 border-start">
+            @{
+                var cart = Context.Session.GetObjectFromJson<NinhBinhStore.Models.Cart>("Cart");
+            }
+            @if (cart != null)
+            {
+                <h5 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-primary fw-bold">Đơn hàng của bạn</span>
+                    <span class="badge bg-primary rounded-pill">@cart.TotalItemCount</span>
+                </h5>
+                <ul class="list-group mb-3 shadow-sm">
+                    @foreach (var item in cart.Items)
+                    {
+                        <li class="list-group-item d-flex justify-content-between lh-sm">
+                            <div>
+                                <h6 class="my-0 fw-bold">@item.Product.Tensp</h6>
+                                <small class="text-muted">Số lượng: @item.Quantity</small>
+                            </div>
+                            <span class="text-muted">@item.TotalPrice.ToString("N0") đ</span>
+                        </li>
+                    }
+                    <li class="list-group-item d-flex justify-content-between bg-light">
+                        <span class="fw-bold">Tổng cộng (VNĐ)</span>
+                        <strong class="text-danger fs-5">@cart.TotalCartPrice.ToString("N0") đ</strong>
+                    </li>
+                </ul>
+            }
+            <a asp-controller="Cart" asp-action="Index" class="text-decoration-none">
+                <i class="fa-solid fa-arrow-left me-1"></i> Quay lại giỏ hàng
+            </a>
+        </div>
+    </div>
+</div>

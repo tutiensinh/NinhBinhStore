@@ -1,0 +1,127 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\images\products\air-fryer-1.jpg" />
+    <None Include="wwwroot\images\products\air-fryer-2.jpg" />
+    <None Include="wwwroot\images\products\air-fryer-3.jpg" />
+    <None Include="wwwroot\images\products\air-fryer-4.jpg" />
+    <None Include="wwwroot\images\products\air-purifier-1.jpg" />
+    <None Include="wwwroot\images\products\air-purifier-2.jpg" />
+    <None Include="wwwroot\images\products\air-purifier-3.jpg" />
+    <None Include="wwwroot\images\products\air-purifier-4.jpg" />
+    <None Include="wwwroot\images\products\air-purifier-5.jpg" />
+    <None Include="wwwroot\images\products\air-purifier-6.jpg" />
+    <None Include="wwwroot\images\products\air-purifier-7.jpg" />
+    <None Include="wwwroot\images\products\banner-video.mp4" />
+    <None Include="wwwroot\images\products\blender-1.jpg" />
+    <None Include="wwwroot\images\products\blender-2.jpg" />
+    <None Include="wwwroot\images\products\blender-3.jpg" />
+    <None Include="wwwroot\images\products\blender-4.jpg" />
+    <None Include="wwwroot\images\products\blender-5.jpg" />
+    <None Include="wwwroot\images\products\blender-6.jpg" />
+    <None Include="wwwroot\images\products\blender-7.jpg" />
+    <None Include="wwwroot\images\products\blender-8.jpg" />
+    <None Include="wwwroot\images\products\coffee-maker-1.jpg" />
+    <None Include="wwwroot\images\products\coffee-maker-2.jpg" />
+    <None Include="wwwroot\images\products\coffee-maker-3.jpg" />
+    <None Include="wwwroot\images\products\fan-1.jpg" />
+    <None Include="wwwroot\images\products\fan-2.jpg" />
+    <None Include="wwwroot\images\products\fan-3.jpg" />
+    <None Include="wwwroot\images\products\fan-4.jpg" />
+    <None Include="wwwroot\images\products\fan-5.jpg" />
+    <None Include="wwwroot\images\products\fan-6.jpg" />
+    <None Include="wwwroot\images\products\fan-7.jpg" />
+    <None Include="wwwroot\images\products\fridge-1.jpg" />
+    <None Include="wwwroot\images\products\fridge-2.jpg" />
+    <None Include="wwwroot\images\products\fridge-3.jpg" />
+    <None Include="wwwroot\images\products\fridge-4.jpg" />
+    <None Include="wwwroot\images\products\fridge-5.jpg" />
+    <None Include="wwwroot\images\products\fridge-6.jpg" />
+    <None Include="wwwroot\images\products\fridge-7.jpg" />
+    <None Include="wwwroot\images\products\induction-hob-1.jpg" />
+    <None Include="wwwroot\images\products\induction-hob-2.jpg" />
+    <None Include="wwwroot\images\products\induction-hob-3.jpg" />
+    <None Include="wwwroot\images\products\induction-hob-4.jpg" />
+    <None Include="wwwroot\images\products\induction-hob-5.jpg" />
+    <None Include="wwwroot\images\products\induction-hob-6.jpg" />
+    <None Include="wwwroot\images\products\induction-hob-7.jpg" />
+    <None Include="wwwroot\images\products\kettle-1.jpg" />
+    <None Include="wwwroot\images\products\kettle-2.jpg" />
+    <None Include="wwwroot\images\products\kettle-3.jpg" />
+    <None Include="wwwroot\images\products\kettle-4.jpg" />
+    <None Include="wwwroot\images\products\kettle-5.jpg" />
+    <None Include="wwwroot\images\products\kettle-6.jpg" />
+    <None Include="wwwroot\images\products\kettle-7.jpg" />
+    <None Include="wwwroot\images\products\kettle-8.jpg" />
+    <None Include="wwwroot\images\products\microwave-1.jpg" />
+    <None Include="wwwroot\images\products\microwave-2.jpg" />
+    <None Include="wwwroot\images\products\microwave-3.jpg" />
+    <None Include="wwwroot\images\products\microwave-4.jpg" />
+    <None Include="wwwroot\images\products\oven-1.jpg" />
+    <None Include="wwwroot\images\products\oven-2.jpg" />
+    <None Include="wwwroot\images\products\oven-3.jpg" />
+    <None Include="wwwroot\images\products\oven-4.jpg" />
+    <None Include="wwwroot\images\products\oven-5.jpg" />
+    <None Include="wwwroot\images\products\oven-6.jpg" />
+    <None Include="wwwroot\images\products\oven-7.jpg" />
+    <None Include="wwwroot\images\products\oven-8.jpg" />
+    <None Include="wwwroot\images\products\rice-cooker-1.jpg" />
+    <None Include="wwwroot\images\products\rice-cooker-2.jpg" />
+    <None Include="wwwroot\images\products\rice-cooker-3.jpg" />
+    <None Include="wwwroot\images\products\rice-cooker-4.jpg" />
+    <None Include="wwwroot\images\products\rice-cooker-5.jpg" />
+    <None Include="wwwroot\images\products\steam-iron-1.jpg" />
+    <None Include="wwwroot\images\products\steam-iron-2.jpg" />
+    <None Include="wwwroot\images\products\steam-iron-3.jpg" />
+    <None Include="wwwroot\images\products\steam-iron-4.jpg" />
+    <None Include="wwwroot\images\products\steam-iron-5.jpeg" />
+    <None Include="wwwroot\images\products\steam-iron-6.jpg" />
+    <None Include="wwwroot\images\products\steam-iron-7.jpg" />
+    <None Include="wwwroot\images\products\television-1.jpg" />
+    <None Include="wwwroot\images\products\television-2.jpg" />
+    <None Include="wwwroot\images\products\television-3.jpg" />
+    <None Include="wwwroot\images\products\television-4.jpg" />
+    <None Include="wwwroot\images\products\television-5.jpg" />
+    <None Include="wwwroot\images\products\television-6.jpg" />
+    <None Include="wwwroot\images\products\television-7.jpg" />
+    <None Include="wwwroot\images\products\television-8.jpg" />
+    <None Include="wwwroot\images\products\vacuum-handheld-1.jpg" />
+    <None Include="wwwroot\images\products\vacuum-handheld-2.jpg" />
+    <None Include="wwwroot\images\products\vacuum-handheld-3.jpg" />
+    <None Include="wwwroot\images\products\vacuum-handheld-4.jpg" />
+    <None Include="wwwroot\images\products\vacuum-handheld-5.jpg" />
+    <None Include="wwwroot\images\products\vacuum-handheld-6.jpg" />
+    <None Include="wwwroot\images\products\vacuum-robot-1.jpg" />
+    <None Include="wwwroot\images\products\vacuum-robot-2.jpg" />
+    <None Include="wwwroot\images\products\vacuum-robot-3.jpg" />
+    <None Include="wwwroot\images\products\vacuum-robot-4.jpg" />
+    <None Include="wwwroot\images\products\washing-machine-1.jpg" />
+    <None Include="wwwroot\images\products\washing-machine-2.jpg" />
+    <None Include="wwwroot\images\products\washing-machine-3.jpg" />
+    <None Include="wwwroot\images\products\washing-machine-4.jpg" />
+    <None Include="wwwroot\images\products\washing-machine-5.jpg" />
+    <None Include="wwwroot\images\products\washing-machine-6.jpg" />
+    <None Include="wwwroot\images\products\washing-machine-7.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EPPlus" Version="6.2.19" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.36">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.36" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.36">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+</Project>

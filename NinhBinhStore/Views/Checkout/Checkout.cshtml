@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Thanh toán QR";
+}
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-lg border-0 rounded-4">
+                <div class="card-header bg-primary text-white text-center py-3 rounded-top-4">
+                    <h4 class="mb-0 fw-bold"><i class="fa-solid fa-qrcode me-2"></i>Quét Mã Thanh Toán</h4>
+                </div>
+                <div class="card-body text-center p-5">
+                    <p class="text-muted mb-4">Vui lòng mở ứng dụng ngân hàng và quét mã QR bên dưới để hoàn tất thanh toán.</p>
+
+                    <div class="p-3 border rounded-3 d-inline-block mb-4 bg-light">
+                        <img src="@ViewBag.QrUrl" class="img-fluid" style="max-width: 250px;" alt="QR Code">
+                    </div>
+
+                    <div class="alert alert-warning text-start shadow-sm" role="alert">
+                        <p class="mb-1"><strong>Ngân hàng:</strong> @ViewBag.BankName</p>
+                        <p class="mb-1"><strong>Số tài khoản:</strong> @ViewBag.AccountNo</p>
+                        <p class="mb-1"><strong>Chủ tài khoản:</strong> @ViewBag.AccountName</p>
+                        <p class="mb-1"><strong>Số tiền:</strong> <strong class="text-danger fs-5">@Convert.ToDecimal(ViewBag.Amount).ToString("N0") đ</strong></p>
+                        <p class="mb-0"><strong>Nội dung CK:</strong> <span class="badge bg-dark text-warning">@ViewBag.Description</span></p>
+                    </div>
+
+                    <form asp-controller="Checkout" asp-action="Process" method="POST">
+                        <input type="hidden" name="action" value="complete_order">
+                        <button type="submit" class="btn btn-success w-100 py-3 fw-bold btn-lg shadow mt-3">
+                            <i class="fa-solid fa-check-circle me-2"></i> TÔI ĐÃ THANH TOÁN
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

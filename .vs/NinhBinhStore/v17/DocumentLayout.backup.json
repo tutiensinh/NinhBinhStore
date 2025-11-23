@@ -1,0 +1,705 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\NinhBinhStore\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|c:\\ninhbinhstore\\ninhbinhstore\\views\\admin\\revenuereport.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|solutionrelative:ninhbinhstore\\views\\admin\\revenuereport.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|c:\\ninhbinhstore\\ninhbinhstore\\views\\admin\\printinvoice.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|solutionrelative:ninhbinhstore\\views\\admin\\printinvoice.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|c:\\ninhbinhstore\\ninhbinhstore\\views\\admin\\manageorders.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|solutionrelative:ninhbinhstore\\views\\admin\\manageorders.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|c:\\ninhbinhstore\\ninhbinhstore\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|solutionrelative:ninhbinhstore\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|c:\\ninhbinhstore\\ninhbinhstore\\dao\\orderdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|solutionrelative:ninhbinhstore\\dao\\orderdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|c:\\ninhbinhstore\\ninhbinhstore\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|solutionrelative:ninhbinhstore\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|c:\\ninhbinhstore\\ninhbinhstore\\views\\account\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|solutionrelative:ninhbinhstore\\views\\account\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|c:\\ninhbinhstore\\ninhbinhstore\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|solutionrelative:ninhbinhstore\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|c:\\ninhbinhstore\\ninhbinhstore\\dao\\userdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|solutionrelative:ninhbinhstore\\dao\\userdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|c:\\ninhbinhstore\\ninhbinhstore\\views\\admin\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|solutionrelative:ninhbinhstore\\views\\admin\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|c:\\ninhbinhstore\\ninhbinhstore\\models\\revenueviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|solutionrelative:ninhbinhstore\\models\\revenueviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|c:\\ninhbinhstore\\ninhbinhstore\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|solutionrelative:ninhbinhstore\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|c:\\ninhbinhstore\\ninhbinhstore\\views\\order\\results.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|solutionrelative:ninhbinhstore\\views\\order\\results.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|c:\\ninhbinhstore\\ninhbinhstore\\views\\checkout\\ordersuccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|solutionrelative:ninhbinhstore\\views\\checkout\\ordersuccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|c:\\ninhbinhstore\\ninhbinhstore\\controllers\\checkoutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|solutionrelative:ninhbinhstore\\controllers\\checkoutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|c:\\ninhbinhstore\\ninhbinhstore\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|solutionrelative:ninhbinhstore\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|c:\\ninhbinhstore\\ninhbinhstore\\views\\order\\lookup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|solutionrelative:ninhbinhstore\\views\\order\\lookup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|c:\\ninhbinhstore\\ninhbinhstore\\views\\order\\history.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|solutionrelative:ninhbinhstore\\views\\order\\history.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|c:\\ninhbinhstore\\ninhbinhstore\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|solutionrelative:ninhbinhstore\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|c:\\ninhbinhstore\\ninhbinhstore\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|solutionrelative:ninhbinhstore\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|c:\\ninhbinhstore\\ninhbinhstore\\views\\shared\\components\\categorymenu\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|solutionrelative:ninhbinhstore\\views\\shared\\components\\categorymenu\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|c:\\ninhbinhstore\\ninhbinhstore\\views\\product\\category.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|solutionrelative:ninhbinhstore\\views\\product\\category.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|c:\\ninhbinhstore\\ninhbinhstore\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|solutionrelative:ninhbinhstore\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|c:\\ninhbinhstore\\ninhbinhstore\\views\\product\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|solutionrelative:ninhbinhstore\\views\\product\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|c:\\ninhbinhstore\\ninhbinhstore\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|solutionrelative:ninhbinhstore\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|c:\\ninhbinhstore\\ninhbinhstore\\views\\product\\searchresults.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|solutionrelative:ninhbinhstore\\views\\product\\searchresults.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|c:\\ninhbinhstore\\ninhbinhstore\\views\\shared\\_productcard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|solutionrelative:ninhbinhstore\\views\\shared\\_productcard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|c:\\ninhbinhstore\\ninhbinhstore\\views\\admin\\productform.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|solutionrelative:ninhbinhstore\\views\\admin\\productform.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|c:\\ninhbinhstore\\ninhbinhstore\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|solutionrelative:ninhbinhstore\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|c:\\ninhbinhstore\\ninhbinhstore\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|solutionrelative:ninhbinhstore\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|c:\\ninhbinhstore\\ninhbinhstore\\views\\account\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|solutionrelative:ninhbinhstore\\views\\account\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|c:\\ninhbinhstore\\ninhbinhstore\\views\\shared\\_authlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|solutionrelative:ninhbinhstore\\views\\shared\\_authlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|c:\\ninhbinhstore\\ninhbinhstore\\views\\admin\\managecontacts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|solutionrelative:ninhbinhstore\\views\\admin\\managecontacts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|c:\\ninhbinhstore\\ninhbinhstore\\views\\admin\\manageusers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|solutionrelative:ninhbinhstore\\views\\admin\\manageusers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|c:\\ninhbinhstore\\ninhbinhstore\\views\\admin\\manageproducts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|solutionrelative:ninhbinhstore\\views\\admin\\manageproducts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|c:\\ninhbinhstore\\ninhbinhstore\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|solutionrelative:ninhbinhstore\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|c:\\ninhbinhstore\\ninhbinhstore\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|solutionrelative:ninhbinhstore\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|c:\\ninhbinhstore\\ninhbinhstore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|solutionrelative:ninhbinhstore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|c:\\ninhbinhstore\\ninhbinhstore\\viewcomponents\\categorymenuviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|solutionrelative:ninhbinhstore\\viewcomponents\\categorymenuviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|c:\\ninhbinhstore\\ninhbinhstore\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|solutionrelative:ninhbinhstore\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|c:\\ninhbinhstore\\ninhbinhstore\\dao\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|solutionrelative:ninhbinhstore\\dao\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|c:\\ninhbinhstore\\ninhbinhstore\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{BDE07E2C-92D0-4312-818A-CE02874D75F5}|NinhBinhStore\\NinhBinhStore.csproj|solutionrelative:ninhbinhstore\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PrintInvoice.cshtml",
+              "DocumentMoniker": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Admin\\PrintInvoice.cshtml",
+              "RelativeDocumentMoniker": "NinhBinhStore\\Views\\Admin\\PrintInvoice.cshtml",
+              "ToolTip": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Admin\\PrintInvoice.cshtml",
+              "RelativeToolTip": "NinhBinhStore\\Views\\Admin\\PrintInvoice.cshtml",
+              "ViewState": "AgIAADgAAAAAAAAAAAD4v08AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-23T17:04:17.379Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RevenueReport.cshtml",
+              "DocumentMoniker": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Admin\\RevenueReport.cshtml",
+              "RelativeDocumentMoniker": "NinhBinhStore\\Views\\Admin\\RevenueReport.cshtml",
+              "ToolTip": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Admin\\RevenueReport.cshtml",
+              "RelativeToolTip": "NinhBinhStore\\Views\\Admin\\RevenueReport.cshtml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAADAAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-23T15:33:18.624Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "C:\\NinhBinhStore\\NinhBinhStore\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "NinhBinhStore\\Controllers\\OrderController.cs",
+              "ToolTip": "C:\\NinhBinhStore\\NinhBinhStore\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "NinhBinhStore\\Controllers\\OrderController.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAA3wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T13:47:30.78Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ManageOrders.cshtml",
+              "DocumentMoniker": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Admin\\ManageOrders.cshtml",
+              "RelativeDocumentMoniker": "NinhBinhStore\\Views\\Admin\\ManageOrders.cshtml",
+              "ToolTip": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Admin\\ManageOrders.cshtml",
+              "RelativeToolTip": "NinhBinhStore\\Views\\Admin\\ManageOrders.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACsAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-22T16:29:59.271Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\NinhBinhStore\\NinhBinhStore\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "NinhBinhStore\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\NinhBinhStore\\NinhBinhStore\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "NinhBinhStore\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAN8AAAAAAAAAAAAIwPEAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T14:23:23.401Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OrderDAO.cs",
+              "DocumentMoniker": "C:\\NinhBinhStore\\NinhBinhStore\\DAO\\OrderDAO.cs",
+              "RelativeDocumentMoniker": "NinhBinhStore\\DAO\\OrderDAO.cs",
+              "ToolTip": "C:\\NinhBinhStore\\NinhBinhStore\\DAO\\OrderDAO.cs",
+              "RelativeToolTip": "NinhBinhStore\\DAO\\OrderDAO.cs",
+              "ViewState": "AgIAAMUAAAAAAAAAAADwvxMBAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T15:03:26.087Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ForgotPassword.cshtml",
+              "DocumentMoniker": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Account\\ForgotPassword.cshtml",
+              "RelativeDocumentMoniker": "NinhBinhStore\\Views\\Account\\ForgotPassword.cshtml",
+              "ToolTip": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Account\\ForgotPassword.cshtml",
+              "RelativeToolTip": "NinhBinhStore\\Views\\Account\\ForgotPassword.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACsAAACBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-22T16:07:13.132Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\NinhBinhStore\\NinhBinhStore\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "NinhBinhStore\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\NinhBinhStore\\NinhBinhStore\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "NinhBinhStore\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAUwHUAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T14:30:37.807Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UserDAO.cs",
+              "DocumentMoniker": "C:\\NinhBinhStore\\NinhBinhStore\\DAO\\UserDAO.cs",
+              "RelativeDocumentMoniker": "NinhBinhStore\\DAO\\UserDAO.cs",
+              "ToolTip": "C:\\NinhBinhStore\\NinhBinhStore\\DAO\\UserDAO.cs",
+              "RelativeToolTip": "NinhBinhStore\\DAO\\UserDAO.cs",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAIwLgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T16:17:54.218Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Admin\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "NinhBinhStore\\Views\\Admin\\Dashboard.cshtml",
+              "ToolTip": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Admin\\Dashboard.cshtml",
+              "RelativeToolTip": "NinhBinhStore\\Views\\Admin\\Dashboard.cshtml",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAIwEwAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-22T16:23:53.618Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\NinhBinhStore\\NinhBinhStore\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "NinhBinhStore\\Models\\Order.cs",
+              "ToolTip": "C:\\NinhBinhStore\\NinhBinhStore\\Models\\Order.cs",
+              "RelativeToolTip": "NinhBinhStore\\Models\\Order.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T15:09:01.505Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "RevenueViewModel.cs",
+              "DocumentMoniker": "C:\\NinhBinhStore\\NinhBinhStore\\Models\\RevenueViewModel.cs",
+              "RelativeDocumentMoniker": "NinhBinhStore\\Models\\RevenueViewModel.cs",
+              "ToolTip": "C:\\NinhBinhStore\\NinhBinhStore\\Models\\RevenueViewModel.cs",
+              "RelativeToolTip": "NinhBinhStore\\Models\\RevenueViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T15:29:36.832Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Results.cshtml",
+              "DocumentMoniker": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Order\\Results.cshtml",
+              "RelativeDocumentMoniker": "NinhBinhStore\\Views\\Order\\Results.cshtml",
+              "ToolTip": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Order\\Results.cshtml",
+              "RelativeToolTip": "NinhBinhStore\\Views\\Order\\Results.cshtml",
+              "ViewState": "AgIAACMAAAAAAAAAAAAIwD0AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-23T14:23:51.513Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "History.cshtml",
+              "DocumentMoniker": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Order\\History.cshtml",
+              "RelativeDocumentMoniker": "NinhBinhStore\\Views\\Order\\History.cshtml",
+              "ToolTip": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Order\\History.cshtml",
+              "RelativeToolTip": "NinhBinhStore\\Views\\Order\\History.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-23T13:48:36.908Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Lookup.cshtml",
+              "DocumentMoniker": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Order\\Lookup.cshtml",
+              "RelativeDocumentMoniker": "NinhBinhStore\\Views\\Order\\Lookup.cshtml",
+              "ToolTip": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Order\\Lookup.cshtml",
+              "RelativeToolTip": "NinhBinhStore\\Views\\Order\\Lookup.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-23T14:22:37.618Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "CheckoutController.cs",
+              "DocumentMoniker": "C:\\NinhBinhStore\\NinhBinhStore\\Controllers\\CheckoutController.cs",
+              "RelativeDocumentMoniker": "NinhBinhStore\\Controllers\\CheckoutController.cs",
+              "ToolTip": "C:\\NinhBinhStore\\NinhBinhStore\\Controllers\\CheckoutController.cs",
+              "RelativeToolTip": "NinhBinhStore\\Controllers\\CheckoutController.cs",
+              "ViewState": "AgIAAIkAAAAAAAAAAAAIwKgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T14:41:48.45Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "OrderSuccess.cshtml",
+              "DocumentMoniker": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Checkout\\OrderSuccess.cshtml",
+              "RelativeDocumentMoniker": "NinhBinhStore\\Views\\Checkout\\OrderSuccess.cshtml",
+              "ToolTip": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Checkout\\OrderSuccess.cshtml",
+              "RelativeToolTip": "NinhBinhStore\\Views\\Checkout\\OrderSuccess.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAiwBIAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-23T14:45:50.472Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "NinhBinhStore\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "NinhBinhStore\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAACgAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-22T16:31:46.691Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "_AdminLayout.cshtml",
+              "DocumentMoniker": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Shared\\_AdminLayout.cshtml",
+              "RelativeDocumentMoniker": "NinhBinhStore\\Views\\Shared\\_AdminLayout.cshtml",
+              "ToolTip": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Shared\\_AdminLayout.cshtml",
+              "RelativeToolTip": "NinhBinhStore\\Views\\Shared\\_AdminLayout.cshtml",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACgAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-22T16:22:06.495Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "CartController.cs",
+              "DocumentMoniker": "C:\\NinhBinhStore\\NinhBinhStore\\Controllers\\CartController.cs",
+              "RelativeDocumentMoniker": "NinhBinhStore\\Controllers\\CartController.cs",
+              "ToolTip": "C:\\NinhBinhStore\\NinhBinhStore\\Controllers\\CartController.cs",
+              "RelativeToolTip": "NinhBinhStore\\Controllers\\CartController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwDEAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T14:29:00.889Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Default.cshtml",
+              "DocumentMoniker": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Shared\\Components\\CategoryMenu\\Default.cshtml",
+              "RelativeDocumentMoniker": "NinhBinhStore\\Views\\Shared\\Components\\CategoryMenu\\Default.cshtml",
+              "ToolTip": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Shared\\Components\\CategoryMenu\\Default.cshtml",
+              "RelativeToolTip": "NinhBinhStore\\Views\\Shared\\Components\\CategoryMenu\\Default.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-22T16:56:22.676Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Category.cshtml",
+              "DocumentMoniker": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Product\\Category.cshtml",
+              "RelativeDocumentMoniker": "NinhBinhStore\\Views\\Product\\Category.cshtml",
+              "ToolTip": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Product\\Category.cshtml",
+              "RelativeToolTip": "NinhBinhStore\\Views\\Product\\Category.cshtml",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAiwA4AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-22T16:39:52.7Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Product\\Index.cshtml",
+              "RelativeDocumentMoniker": "NinhBinhStore\\Views\\Product\\Index.cshtml",
+              "ToolTip": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Product\\Index.cshtml",
+              "RelativeToolTip": "NinhBinhStore\\Views\\Product\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAB7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-22T16:39:05.6Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Detail.cshtml",
+              "DocumentMoniker": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Product\\Detail.cshtml",
+              "RelativeDocumentMoniker": "NinhBinhStore\\Views\\Product\\Detail.cshtml",
+              "ToolTip": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Product\\Detail.cshtml",
+              "RelativeToolTip": "NinhBinhStore\\Views\\Product\\Detail.cshtml",
+              "ViewState": "AgIAAF8AAAAAAAAAAAAIwHEAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-22T16:35:27.425Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "SearchResults.cshtml",
+              "DocumentMoniker": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Product\\SearchResults.cshtml",
+              "RelativeDocumentMoniker": "NinhBinhStore\\Views\\Product\\SearchResults.cshtml",
+              "ToolTip": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Product\\SearchResults.cshtml",
+              "RelativeToolTip": "NinhBinhStore\\Views\\Product\\SearchResults.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-22T17:44:13.729Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Cart\\Index.cshtml",
+              "RelativeDocumentMoniker": "NinhBinhStore\\Views\\Cart\\Index.cshtml",
+              "ToolTip": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Cart\\Index.cshtml",
+              "RelativeToolTip": "NinhBinhStore\\Views\\Cart\\Index.cshtml",
+              "ViewState": "AgIAAFgAAAAAAAAAAIBJwBEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-22T18:32:00.179Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "_ProductCard.cshtml",
+              "DocumentMoniker": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Shared\\_ProductCard.cshtml",
+              "RelativeDocumentMoniker": "NinhBinhStore\\Views\\Shared\\_ProductCard.cshtml",
+              "ToolTip": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Shared\\_ProductCard.cshtml",
+              "RelativeToolTip": "NinhBinhStore\\Views\\Shared\\_ProductCard.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-22T16:33:18.624Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "ProductForm.cshtml",
+              "DocumentMoniker": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Admin\\ProductForm.cshtml",
+              "RelativeDocumentMoniker": "NinhBinhStore\\Views\\Admin\\ProductForm.cshtml",
+              "ToolTip": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Admin\\ProductForm.cshtml",
+              "RelativeToolTip": "NinhBinhStore\\Views\\Admin\\ProductForm.cshtml",
+              "ViewState": "AgIAACQAAAAAAAAAAIBJwDkAAAB5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-22T16:29:16.605Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "NinhBinhStore\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "NinhBinhStore\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-22T16:33:39.35Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Contact.cshtml",
+              "DocumentMoniker": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Home\\Contact.cshtml",
+              "RelativeDocumentMoniker": "NinhBinhStore\\Views\\Home\\Contact.cshtml",
+              "ToolTip": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Home\\Contact.cshtml",
+              "RelativeToolTip": "NinhBinhStore\\Views\\Home\\Contact.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGYAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-22T16:41:08.123Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Account\\Index.cshtml",
+              "RelativeDocumentMoniker": "NinhBinhStore\\Views\\Account\\Index.cshtml",
+              "ToolTip": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Account\\Index.cshtml",
+              "RelativeToolTip": "NinhBinhStore\\Views\\Account\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE4AAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-22T16:40:27.061Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "ManageContacts.cshtml",
+              "DocumentMoniker": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Admin\\ManageContacts.cshtml",
+              "RelativeDocumentMoniker": "NinhBinhStore\\Views\\Admin\\ManageContacts.cshtml",
+              "ToolTip": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Admin\\ManageContacts.cshtml",
+              "RelativeToolTip": "NinhBinhStore\\Views\\Admin\\ManageContacts.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-22T16:31:24.437Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "ManageUsers.cshtml",
+              "DocumentMoniker": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Admin\\ManageUsers.cshtml",
+              "RelativeDocumentMoniker": "NinhBinhStore\\Views\\Admin\\ManageUsers.cshtml",
+              "ToolTip": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Admin\\ManageUsers.cshtml",
+              "RelativeToolTip": "NinhBinhStore\\Views\\Admin\\ManageUsers.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAIBJwCsAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-22T16:30:34.492Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "_AuthLayout.cshtml",
+              "DocumentMoniker": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Shared\\_AuthLayout.cshtml",
+              "RelativeDocumentMoniker": "NinhBinhStore\\Views\\Shared\\_AuthLayout.cshtml",
+              "ToolTip": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Shared\\_AuthLayout.cshtml",
+              "RelativeToolTip": "NinhBinhStore\\Views\\Shared\\_AuthLayout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-22T16:19:51.942Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "ManageProducts.cshtml",
+              "DocumentMoniker": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Admin\\ManageProducts.cshtml",
+              "RelativeDocumentMoniker": "NinhBinhStore\\Views\\Admin\\ManageProducts.cshtml",
+              "ToolTip": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Admin\\ManageProducts.cshtml",
+              "RelativeToolTip": "NinhBinhStore\\Views\\Admin\\ManageProducts.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-22T16:24:33.029Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "NinhBinhStore\\Views\\Account\\Login.cshtml",
+              "ToolTip": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "NinhBinhStore\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-22T15:49:20.448Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\NinhBinhStore\\NinhBinhStore\\Program.cs",
+              "RelativeDocumentMoniker": "NinhBinhStore\\Program.cs",
+              "ToolTip": "C:\\NinhBinhStore\\NinhBinhStore\\Program.cs",
+              "RelativeToolTip": "NinhBinhStore\\Program.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAIBJwCoAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T13:38:14.886Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "NinhBinhStore\\Views\\Account\\Register.cshtml",
+              "ToolTip": "C:\\NinhBinhStore\\NinhBinhStore\\Views\\Account\\Register.cshtml",
+              "RelativeToolTip": "NinhBinhStore\\Views\\Account\\Register.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-22T15:50:22.559Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "CategoryMenuViewComponent.cs",
+              "DocumentMoniker": "C:\\NinhBinhStore\\NinhBinhStore\\ViewComponents\\CategoryMenuViewComponent.cs",
+              "RelativeDocumentMoniker": "NinhBinhStore\\ViewComponents\\CategoryMenuViewComponent.cs",
+              "ToolTip": "C:\\NinhBinhStore\\NinhBinhStore\\ViewComponents\\CategoryMenuViewComponent.cs",
+              "RelativeToolTip": "NinhBinhStore\\ViewComponents\\CategoryMenuViewComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAIBJwAkAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T14:32:30.605Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\NinhBinhStore\\NinhBinhStore\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "NinhBinhStore\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\NinhBinhStore\\NinhBinhStore\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "NinhBinhStore\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwDQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T14:36:37.829Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "DBContext.cs",
+              "DocumentMoniker": "C:\\NinhBinhStore\\NinhBinhStore\\DAO\\DBContext.cs",
+              "RelativeDocumentMoniker": "NinhBinhStore\\DAO\\DBContext.cs",
+              "ToolTip": "C:\\NinhBinhStore\\NinhBinhStore\\DAO\\DBContext.cs",
+              "RelativeToolTip": "NinhBinhStore\\DAO\\DBContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T13:47:47.323Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\NinhBinhStore\\NinhBinhStore\\appsettings.json",
+              "RelativeDocumentMoniker": "NinhBinhStore\\appsettings.json",
+              "ToolTip": "C:\\NinhBinhStore\\NinhBinhStore\\appsettings.json",
+              "RelativeToolTip": "NinhBinhStore\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAACWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-22T13:26:30.458Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+﻿@model List<string>
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle px-3" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Danh mục sản phẩm
+    </a>
+
+    <ul class="dropdown-menu shadow border-0 mt-2" aria-labelledby="navbarDropdown">
+        @if (Model != null && Model.Count > 0)
+        {
+            foreach (var category in Model)
+            {
+                <li>
+                    <a class="dropdown-item py-2" href="/Product/Category?loai=@category">
+                        @category
+                    </a>
+                </li>
+            }
+        }
+        else
+        {
+            <li><span class="dropdown-item text-muted">Đang cập nhật...</span></li>
+        }
+
+        <li>
+            <a class="dropdown-item fw-bold text-primary border-top mt-1 pt-2" asp-controller="Product" asp-action="Index">
+                <i class="fa-solid fa-border-all me-2"></i>Xem tất cả sản phẩm
+            </a>
+        </li>
+    </ul>
+</li>
