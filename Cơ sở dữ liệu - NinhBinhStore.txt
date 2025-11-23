@@ -1,0 +1,222 @@
+
+-- --------------------------------------------------------
+-- 2. Tạo bảng TAIKHOAN
+-- --------------------------------------------------------
+CREATE TABLE [dbo].[taikhoan] (
+    [id] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    [hoten] NVARCHAR(100) NOT NULL,
+    [tendangnhap] VARCHAR(100) NOT NULL,
+    [matkhau] VARCHAR(100) NOT NULL,
+    [email] VARCHAR(100) NOT NULL,
+    [sodienthoai] VARCHAR(20) NOT NULL,
+    [diachi] NVARCHAR(300) NOT NULL,
+    [vaitro] NVARCHAR(20) NOT NULL CHECK ([vaitro] IN (N'user', N'admin'))
+);
+GO
+
+-- Chèn dữ liệu mẫu cho taikhoan
+SET IDENTITY_INSERT [dbo].[taikhoan] ON;
+INSERT INTO [dbo].[taikhoan] ([id], [hoten], [tendangnhap], [matkhau], [email], [sodienthoai], [diachi], [vaitro]) VALUES
+(2, N'Nguyễn Việt Anh ', 'Vanh', 'admin1234', 'nva@gmail.com', '0969927975', N'Gia Lâm, Hà Nội', N'user'),
+(3, N'Nguyễn Ngọc Tú', 'nguyentu', '123456', 'nguyentunb1@gmail.com', '0328009638', N'Hoa Lư - Ninh Bình', N'admin'),
+(4, N'Phùng Tuấn Anh', 'tanh', 'admin', 'pta@gmail.com', '096234', N'Phu Tho', N'user'),
+(5, N'Trần Văn Huy', 'huylegend2k', '12345678', 'huydeptrai@gmail.com', '0986984965', N'Phường Thượng Cát, Hà Nội', N'user'),
+(6, N'Phạm Linh Hương', 'linhhuong', '654321', 'plh@gmail.com', '04885995', N'Tuyên Quang', N'user');
+SET IDENTITY_INSERT [dbo].[taikhoan] OFF;
+GO
+
+-- --------------------------------------------------------
+-- 3. Tạo bảng SANPHAM
+-- --------------------------------------------------------
+CREATE TABLE [dbo].[sanpham] (
+    [id] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    [tensp] NVARCHAR(200) NOT NULL,
+    [mota] NVARCHAR(MAX) NOT NULL, -- Text trong MySQL tương đương NVARCHAR(MAX)
+    [dongia] DECIMAL(10,2) NOT NULL,
+    [hinhanh] VARCHAR(200) NOT NULL,
+    [loai] NVARCHAR(100) NOT NULL,
+    [tonkho] INT NOT NULL
+);
+GO
+
+-- Chèn dữ liệu mẫu cho sanpham
+SET IDENTITY_INSERT [dbo].[sanpham] ON;
+INSERT INTO [dbo].[sanpham] ([id], [tensp], [mota], [dongia], [hinhanh], [loai], [tonkho]) VALUES
+(1, N'Nồi cơm điện Cuckoo 1.8L CR-1020F', N'Nồi cơm điện tử, lòng nồi chống dính', 1890000.00, 'images/products/rice-cooker-1.jpg', N'Nhà bếp', 55),
+(2, N'Nồi cơm cao tần Toshiba 1.5L RC-15VXR', N'Công nghệ IH, nấu cơm cháy, giữ ấm 48h', 4200000.00, 'images/products/rice-cooker-2.jpg', N'Nhà bếp', 55),
+(3, N'Máy xay sinh tố Philips HR2118', N'Cối thủy tinh 1.5L, 5 tốc độ, nhồi', 1290000.00, 'images/products/blender-1.jpg', N'Nhà bếp', 70),
+(4, N'Máy xay đa năng Panasonic MX-AC400WRA', N'Xay sinh tố, xay thịt, xay đồ khô', 1990000.00, 'images/products/blender-2.jpg', N'Nhà bếp', 45),
+(5, N'Lò vi sóng Sharp 20L R-205VN-S', N'Có nướng, công suất 800W, rã đông nhanh', 1750000.00, 'images/products/microwave-1.jpg', N'Nhà bếp', 40),
+(6, N'Lò vi sóng điện tử Samsung 23L MG23K3515AS/SV', N'Lòng gốm Ceramic, hẹn giờ', 2490000.00, 'images/products/microwave-2.jpg', N'Nhà bếp', 35),
+(7, N'Ấm đun siêu tốc Lock&Lock 1.7L EJK341', N'Chất liệu inox 304 an toàn, tự ngắt khi sôi', 650000.00, 'images/products/kettle-1.jpg', N'Nhà bếp', 100),
+(8, N'Bếp từ đôi Kangaroo KG855i', N'Mặt kính Ceramic, công suất 4000W', 5990000.00, 'images/products/induction-hob-1.jpg', N'Nhà bếp', 25),
+(9, N'Bếp từ đơn Sunhouse SHD6150', N'Nhỏ gọn, phím cảm ứng, tặng kèm nồi lẩu', 790000.00, 'images/products/induction-hob-2.jpg', N'Nhà bếp', 60),
+(10, N'Nồi chiên không dầu Philips 6.2L HD9270/90', N'Công nghệ Rapid Air, giảm 90% chất béo', 3800000.00, 'images/products/air-fryer-1.jpg', N'Nhà bếp', 40),
+(11, N'Nồi chiên không dầu Lock&Lock 7L EJF881', N'Dung tích cực lớn, bảng điều khiển điện tử', 3190000.00, 'images/products/air-fryer-2.jpg', N'Nhà bếp', 30),
+(12, N'Máy pha cà phê Delonghi EC685.M', N'Pha Espresso, Cappuccino chuyên nghiệp', 5500000.00, 'images/products/coffee-maker-1.jpg', N'Nhà bếp', 20),
+(13, N'Máy ép chậm Hurom HZ-SBE17', N'Ép kiệt bã, giữ nguyên vitamin', 8500000.00, 'images/products/blender-3.jpg', N'Nhà bếp', 15),
+(14, N'Lò nướng Sanaky 50L VH-5099S2D', N'Có quạt đối lưu, 2 thanh nhiệt, xiên quay', 2300000.00, 'images/products/oven-1.jpg', N'Nhà bếp', 25),
+(15, N'Bếp nướng điện không khói Sunhouse SHD4607', N'Mặt bếp phủ chống dính Whitford (USA)', 890000.00, 'images/products/oven-2.jpg', N'Nhà bếp', 40),
+(16, N'Máy đánh trứng cầm tay Bosch MFQ4030', N'Công suất 500W, 5 tốc độ, que trộn inox', 1450000.00, 'images/products/blender-4.jpg', N'Nhà bếp', 50),
+(17, N'Máy làm sữa hạt Unie V8S', N'Tự động xay nấu, vệ sinh máy', 2990000.00, 'images/products/blender-5.jpg', N'Nhà bếp', 20),
+(18, N'Ấm đun siêu tốc thông minh Xiaomi', N'Điều khiển qua app, giữ nhiệt 12h', 990000.00, 'images/products/kettle-2.jpg', N'Nhà bếp', 30),
+(19, N'Tủ lạnh Samsung Inverter 256L RT25M4032BU/SV', N'Ngăn đông mềm -1°C, tiết kiệm điện', 7490000.00, 'images/products/fridge-1.jpg', N'Gia dụng lớn', 20),
+(20, N'Tủ lạnh Side by Side LG 601L GR-D247JDS', N'Lấy nước ngoài, Inverter, khử mùi Nano', 18990000.00, 'images/products/fridge-2.jpg', N'Gia dụng lớn', 35),
+(21, N'Máy giặt cửa trước LG 9kg FV1409S4W', N'Công nghệ AI DD, giặt hơi nước diệt khuẩn', 8990000.00, 'images/products/washing-machine-1.jpg', N'Gia dụng lớn', 15),
+(22, N'Máy giặt cửa trên Panasonic 10kg NA-F100A9BRV', N'Mâm giặt Ag+, giặt nhanh', 6200000.00, 'images/products/washing-machine-2.jpg', N'Gia dụng lớn', 25),
+(23, N'Máy sấy bơm nhiệt Electrolux 8kg EDH803R7WB', N'Sấy Heat Pump, tiết kiệm điện', 12500000.00, 'images/products/washing-machine-3.jpg', N'Gia dụng lớn', 10),
+(24, N'Tủ lạnh mini Aqua 90L AQR-D99FA(BS)', N'Nhỏ gọn, phù hợp phòng trọ, khách sạn', 2690000.00, 'images/products/fridge-3.jpg', N'Gia dụng lớn', 30),
+(25, N'Máy rửa bát Bosch SMS46NI05E', N'13 bộ, sấy Zeolith, SuperSilence', 19500000.00, 'images/products/oven-3.jpg', N'Gia dụng lớn', 15),
+(26, N'Tủ đông Sanaky 260L VH-2899A3', N'Dàn đồng, 2 ngăn (đông, mát)', 5800000.00, 'images/products/fridge-4.jpg', N'Gia dụng lớn', 15),
+(27, N'Robot hút bụi Xiaomi Roborock S7', N'Lau rung, tự động nâng giẻ, lực hút 2500Pa', 11990000.00, 'images/products/vacuum-robot-1.jpg', N'Làm sạch', 20),
+(28, N'Robot hút bụi Ecovacs Deebot T9', N'Làm sạch gấp 4, khử mùi Air Freshener', 9500000.00, 'images/products/vacuum-robot-2.jpg', N'Làm sạch', 15),
+(29, N'Máy hút bụi không dây Dyson V11 Fluffy', N'Lực hút mạnh nhất, pin 60 phút', 15990000.00, 'images/products/vacuum-handheld-1.jpg', N'Làm sạch', 10),
+(30, N'Máy hút bụi cầm tay Deerma DX700S', N'Công suất 600W, bộ lọc HEPA', 790000.00, 'images/products/vacuum-handheld-2.jpg', N'Làm sạch', 60),
+(31, N'Máy lọc không khí Xiaomi 4 Pro', N'Lọc bụi mịn PM2.5, diện tích 60m²', 4190000.00, 'images/products/air-purifier-1.jpg', N'Làm sạch', 30),
+(32, N'Máy lọc không khí Sharp FP-J30E-A', N'Công nghệ Plasmacluster ion, khử mùi', 2190000.00, 'images/products/air-purifier-2.jpg', N'Làm sạch', 50),
+(33, N'Bàn ủi hơi nước đứng Philips GC518', N'Công suất 1600W, 5 chế độ phun hơi', 2200000.00, 'images/products/steam-iron-1.jpg', N'Làm sạch', 35),
+(34, N'Bàn ủi hơi nước cầm tay Tefal DT8100', N'Gọn nhẹ, làm nóng nhanh 40s', 1590000.00, 'images/products/steam-iron-2.jpg', N'Làm sạch', 40),
+(35, N'Máy hút ẩm Sharp 12L DW-D12A-W', N'Kiểm soát độ ẩm, sấy quần áo', 5500000.00, 'images/products/air-purifier-3.jpg', N'Làm sạch', 20),
+(36, N'Quạt cây Mitsubishi LV16-RV', N'Điều khiển từ xa, 3 tốc độ gió', 1990000.00, 'images/products/fan-1.jpg', N'Gia dụng khác', 50),
+(37, N'Quạt điều hòa Sunhouse SHD7721', N'Dung tích 30L, làm mát nhanh', 3100000.00, 'images/products/fan-2.jpg', N'Gia dụng khác', 25),
+(38, N'Smart Tivi Samsung 4K 55 inch UA55AU7700', N'Vi xử lý Crystal 4K, Tizen OS', 11500000.00, 'images/products/television-1.jpg', N'Giải trí', 30),
+(39, N'Smart Tivi LG 4K 50 inch 50UQ7550PSF', N'WebOS, điều khiển giọng nói', 9890000.00, 'images/products/television-2.jpg', N'Giải trí', 25),
+(40, N'Máy sấy tóc ion âm Panasonic EH-NE65-K645', N'Công suất 2000W, bảo vệ tóc', 850000.00, 'images/products/steam-iron-3.jpg', N'Gia dụng khác', 70),
+(41, N'Cân sức khỏe điện tử Xiaomi Mi Scale 2', N'Đo 13 chỉ số cơ thể, kết nối app', 690000.00, 'images/products/kettle-3.jpg', N'Gia dụng khác', 80),
+(42, N'Ổ cắm thông minh Điện Quang', N'Hẹn giờ bật tắt, điều khiển qua Wifi', 350000.00, 'images/products/kettle-4.jpg', N'Gia dụng khác', 100),
+(43, N'Quạt trần 5 cánh Panasonic F-60WWK', N'Động cơ DC, êm ái, tiết kiệm điện', 4800000.00, 'images/products/fan-3.jpg', N'Gia dụng khác', 20),
+(44, N'Máy nước nóng Ariston 20L AN2 20 RS 2.5 FE', N'Làm nóng gián tiếp, thanh đốt đồng', 2790000.00, 'images/products/oven-4.jpg', N'Gia dụng khác', 30),
+(45, N'Loa Bluetooth Marshall Stanmore II', N'Thiết kế cổ điển, âm thanh mạnh mẽ', 8990000.00, 'images/products/television-3.jpg', N'Giải trí', 15),
+(46, N'Combo Nồi cơm + Ấm siêu tốc (Giá sốc)', N'Mua 1 được 2, tiết kiệm hơn', 1990000.00, 'images/products/rice-cooker-3.jpg', N'Khuyến mãi', 20),
+(47, N'Lò vi sóng (Hàng trưng bày, giảm 40%)', N'Lò vi sóng Sharp 20L mới 99%', 1050000.00, 'images/products/microwave-3.jpg', N'Khuyến mãi', 5),
+(48, N'Máy lọc không khí (Giảm giá cuối tuần)', N'Máy lọc không khí Sharp FP-J30E-A', 1990000.00, 'images/products/air-purifier-4.jpg', N'Khuyến mãi', 15),
+(49, N'Bếp từ đơn (Tặng nồi lẩu)', N'Bếp từ Sunhouse SHD6150 giá không đổi', 790000.00, 'images/products/induction-hob-3.jpg', N'Khuyến mãi', 50),
+(50, N'Máy hút bụi Deerma (Sale sập sàn)', N'Máy hút bụi cầm tay Deerma DX700S', 599000.00, 'images/products/vacuum-handheld-3.jpg', N'Khuyến mãi', 30),
+(51, N'Nồi cơm cao tần Tiger 1L JKT-S10W', N'Lòng nồi 8 lớp, 11 chế độ nấu', 7800000.00, 'images/products/rice-cooker-4.jpg', N'Nhà bếp', 15),
+(52, N'Máy ép trái cây Panasonic MJ-L500SRA', N'Ép kiệt bã 90%, giữ nguyên vitamin', 4500000.00, 'images/products/blender-6.jpg', N'Nhà bếp', 25),
+(53, N'Ấm siêu tốc thủy tinh Philips HD9339/80', N'Dung tích 1.7L, đèn LED xanh khi đun', 1190000.00, 'images/products/kettle-5.jpg', N'Nhà bếp', 60),
+(54, N'Nồi chiên không dầu Cosori 3.5L', N'11 chế độ cài đặt sẵn, điều khiển điện tử', 2100000.00, 'images/products/air-fryer-3.jpg', N'Nhà bếp', 40),
+(55, N'Máy trộn bột cầm tay KitchenAid 7 tốc độ', N'Que trộn thép không gỉ, động cơ mạnh mẽ', 1900000.00, 'images/products/blender-7.jpg', N'Nhà bếp', 30),
+(56, N'Máy xay cà phê hạt Delonghi KG79', N'Xay mịn đều với 16 mức độ', 1350000.00, 'images/products/coffee-maker-2.jpg', N'Nhà bếp', 35),
+(57, N'Lò nướng đối lưu Electrolux 30L EOT30MXC', N'6 chế độ nướng, vỏ thép không gỉ', 2400000.00, 'images/products/oven-5.jpg', N'Nhà bếp', 22),
+(58, N'Tủ lạnh Samsung Side by Side 655L RS62R5001M9/SV', N'Lấy nước ngoài, làm đá tự động', 19990000.00, 'images/products/fridge-5.jpg', N'Gia dụng lớn', 10),
+(59, N'Máy giặt cửa trên Toshiba 10kg AW-UK1100GV', N'Công nghệ GreatWaves, giặt siêu sạch', 7200000.00, 'images/products/washing-machine-4.jpg', N'Gia dụng lớn', 18),
+(60, N'Máy rửa bát độc lập Electrolux ESF6010BW', N'8 bộ, 6 chương trình rửa', 9500000.00, 'images/products/oven-6.jpg', N'Gia dụng lớn', 12),
+(61, N'Máy sấy thông hơi Electrolux 7.5kg EDV754H3WB', N'Cảm biến Smart Sensor, sấy nhanh 40 phút', 6990000.00, 'images/products/washing-machine-5.jpg', N'Gia dụng lớn', 20),
+(62, N'Bình nước nóng Ariston 30L AN2 30RS', N'Làm nóng gián tiếp, ELCB chống giật', 3100000.00, 'images/products/kettle-6.jpg', N'Gia dụng lớn', 40),
+(63, N'Máy hút bụi dạng hộp Panasonic MC-CL575KN49', N'Công suất 2000W, bộ lọc HEPA 7 lớp', 2900000.00, 'images/products/vacuum-handheld-4.jpg', N'Làm sạch', 30),
+(64, N'Cây lau nhà hơi nước Deerma ZQ610', N'Diệt 99.9% vi khuẩn bằng hơi nóng 150°C', 1600000.00, 'images/products/steam-iron-4.jpg', N'Làm sạch', 35),
+(65, N'Máy lọc không khí Dyson Purifier Cool TP07', N'Lọc HEPA 360°, kiêm quạt không cánh', 14500000.00, 'images/products/air-purifier-5.jpg', N'Làm sạch', 10),
+(66, N'Máy hút bụi mini Xiaomi Mi Vacuum Cleaner Mini', N'Nhỏ gọn, dùng cho ô tô, sofa, bàn phím', 950000.00, 'images/products/vacuum-handheld-5.jpg', N'Làm sạch', 50),
+(67, N'Smart Tivi OLED LG 4K 55 inch 55C2PSA', N'Màn hình OLED evo, chip α9 Gen5 AI', 28900000.00, 'images/products/television-4.jpg', N'Giải trí', 8),
+(68, N'Loa thanh Soundbar Samsung HW-Q700B', N'Âm thanh vòm 3.1.2 kênh, Dolby Atmos', 7500000.00, 'images/products/television-5.jpg', N'Giải trí', 20),
+(69, N'Máy sấy tóc Dyson Supersonic HD08', N'Kiểm soát nhiệt thông minh, 5 đầu sấy', 11500000.00, 'images/products/steam-iron-5.jpeg', N'Gia dụng khác', 15),
+(70, N'Quạt đứng Senko DR1608', N'Màu kem môn, remote điều khiển từ xa', 680000.00, 'images/products/fan-4.jpg', N'Gia dụng khác', 70),
+(71, N'Google Tivi Xiaomi 4K 43 inch A Pro', N'Hệ điều hành Google TV, viền kim loại', 6490000.00, 'images/products/television-6.jpg', N'Giải trí', 30),
+(72, N'Máy cạo râu Philips S1103/02', N'Lưỡi cạo tự mài, cạo khô và ướt', 850000.00, 'images/products/steam-iron-6.jpg', N'Gia dụng khác', 40),
+(73, N'Combo Bếp từ + Nồi chiên (Giảm 30%)', N'Tiết kiệm chi phí cho căn bếp mới', 3500000.00, 'images/products/induction-hob-4.jpg', N'Khuyến mãi', 15),
+(74, N'Quạt sưởi gốm Ceramic (Thanh lý 50%)', N'Hàng trưng bày, sưởi ấm nhanh, an toàn', 990000.00, 'images/products/fan-5.jpg', N'Khuyến mãi', 5),
+(75, N'Ấm siêu tốc Sunhouse 1.8L (Giá sốc)', N'Inox 304, giá chỉ còn 199.000đ', 199000.00, 'images/products/kettle-7.jpg', N'Khuyến mãi', 100),
+(76, N'Nồi áp suất điện Sunhouse 6L SHD1560', N'Hầm, nấu cháo, súp. An toàn', 1590000.00, 'images/products/rice-cooker-5.jpg', N'Nhà bếp', 40),
+(77, N'Máy xay thịt Lock&Lock EJM171', N'Cối thủy tinh 1.2L, lưỡi dao kép', 890000.00, 'images/products/blender-8.jpg', N'Nhà bếp', 55),
+(78, N'Lò vi sóng Electrolux 20L EMM20K18GW', N'Điều khiển cơ, 5 mức công suất', 1650000.00, 'images/products/microwave-4.jpg', N'Nhà bếp', 35),
+(79, N'Bếp nướng điện Kangaroo KG699', N'Mặt đá hoa cương, không sinh khói', 1100000.00, 'images/products/oven-7.jpg', N'Nhà bếp', 30),
+(80, N'Máy pha cà phê phin điện tự động', N'Giữ trọn hương vị phin truyền thống', 750000.00, 'images/products/coffee-maker-3.jpg', N'Nhà bếp', 50),
+(81, N'Nồi chiên không dầu Kalite 10L Q10', N'Dung tích lớn, 10 chức năng', 2800000.00, 'images/products/air-fryer-4.jpg', N'Nhà bếp', 25),
+(82, N'Bếp từ đơn Xiaomi Mi Induction Cooker', N'Thiết kế tối giản, 99 mức nhiệt', 1390000.00, 'images/products/induction-hob-5.jpg', N'Nhà bếp', 40),
+(83, N'Tủ lạnh Panasonic Inverter 322L', N'Ngăn đông mềm Prime Fresh, tiết kiệm điện', 12990000.00, 'images/products/fridge-6.jpg', N'Gia dụng lớn', 15),
+(84, N'Máy giặt cửa trên Aqua 9kg AQW-F91GT.S', N'Mâm giặt kháng khuẩn, vắt cực khô', 5300000.00, 'images/products/washing-machine-6.jpg', N'Gia dụng lớn', 25),
+(85, N'Tủ mát Sanaky 300L VH-308K', N'Cửa kính 2 lớp, sưởi kính', 7200000.00, 'images/products/fridge-7.jpg', N'Gia dụng lớn', 10),
+(86, N'Máy sấy ngưng tụ Beko 8kg DU8133GA0W', N'Không cần ống thoát, 15 chương trình', 8990000.00, 'images/products/washing-machine-7.jpg', N'Gia dụng lớn', 18),
+(87, N'Lò nướng âm tủ Bosch 71L HBF534EB0K', N'7 chế độ nướng, 3D Hotair', 16500000.00, 'images/products/oven-8.jpg', N'Gia dụng lớn', 8),
+(88, N'Robot hút bụi lau nhà Dreame D9 Max', N'Lực hút 4000Pa, điều hướng LiDAR', 7990000.00, 'images/products/vacuum-robot-3.jpg', N'Làm sạch', 22),
+(89, N'Máy lọc không khí Levoit Core 300', N'Lõi lọc 3 lớp HEPA, hiệu quả 40m²', 2890000.00, 'images/products/air-purifier-6.jpg', N'Làm sạch', 45),
+(90, N'Bàn ủi hơi nước Philips EasySpeed GC1742', N'Mặt đế chống dính, công suất 2000W', 690000.00, 'images/products/steam-iron-7.jpg', N'Làm sạch', 60),
+(91, N'Máy hút bụi giường nệm Deerma CM800', N'Diệt khuẩn UV, rung 8000 lần/phút', 1100000.00, 'images/products/vacuum-handheld-6.jpg', N'Làm sạch', 50),
+(92, N'Máy lọc không khí Sharp 40m² FP-J50V-H', N'Plasmacluster ion mật độ cao', 4500000.00, 'images/products/air-purifier-7.jpg', N'Làm sạch', 30),
+(93, N'Smart Tivi QLED Samsung 4K 55 inch QA55Q60B', N'Chấm lượng tử, 100% dải màu', 14900000.00, 'images/products/television-7.jpg', N'Giải trí', 20),
+(94, N'Quạt điều hòa Kangaroo KG50F62', N'Dung tích 30L, làm mát nhanh, remote', 2990000.00, 'images/products/fan-6.jpg', N'Gia dụng khác', 33),
+(95, N'Android Tivi Sony 4K 50 inch KD-50X75K', N'Google TV, chip X1, âm thanh vòm', 11900000.00, 'images/products/television-8.jpg', N'Giải trí', 25),
+(96, N'Máy tăm nước Lock&Lock Cordless ENR156BLU', N'3 chế độ, pin sạc, chống nước IPX7', 950000.00, 'images/products/kettle-8.jpg', N'Gia dụng khác', 70),
+(97, N'Quạt sạc tích điện Sunhouse SHD7116', N'Dùng 5-8 tiếng khi mất điện', 850000.00, 'images/products/fan-7.jpg', N'Gia dụng khác', 40),
+(98, N'Combo Nồi + Chảo Sunhouse (Mua 1 tặng 1)', N'Bộ nồi inox 3 đáy và chảo chống dính', 799000.00, 'images/products/induction-hob-6.jpg', N'Khuyến mãi', 50),
+(99, N'Robot hút bụi (Trưng bày, giảm 60%)', N'Robot Ecovacs Deebot T9, mới 98%', 3900000.00, 'images/products/vacuum-robot-4.jpg', N'Khuyến mãi', 10),
+(100, N'Mua Bếp Từ Tặng Bộ Nồi 5 Món', N'Mua Bếp từ đôi Kangaroo KG855i tặng bộ nồi', 5900000.00, 'images/products/induction-hob-7.jpg', N'Khuyến mãi', 25);
+SET IDENTITY_INSERT [dbo].[sanpham] OFF;
+GO
+
+-- --------------------------------------------------------
+-- 4. Tạo bảng DONHANG
+-- --------------------------------------------------------
+CREATE TABLE [dbo].[donhang] (
+    [id] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    [id_taikhoan] INT NOT NULL,
+    [ngaydat] DATETIME NOT NULL,
+    [diachi] NVARCHAR(300) NOT NULL,
+    [email] VARCHAR(100) NOT NULL,
+    [tongtien] DECIMAL(12,2) NOT NULL,
+    [trangthai] NVARCHAR(50) NOT NULL CHECK ([trangthai] IN (N'Chờ xử lý', N'Đang giao', N'Hoàn thành', N'Hủy')),
+    CONSTRAINT [fk_donhang_taikhoan] FOREIGN KEY ([id_taikhoan]) REFERENCES [dbo].[taikhoan] ([id]) ON DELETE CASCADE ON UPDATE CASCADE
+);
+GO
+
+-- Chèn dữ liệu mẫu cho donhang
+SET IDENTITY_INSERT [dbo].[donhang] ON;
+INSERT INTO [dbo].[donhang] ([id], [id_taikhoan], [ngaydat], [diachi], [email], [tongtien], [trangthai]) VALUES
+(4, 4, '2025-11-09 01:40:22', N'Phu Tho, ha noi', 'nta123@gmail.com', 7800000.00, N'Hoàn thành'),
+(5, 4, '2025-11-09 01:42:13', N'Phu Tho', 'nta123@gmail.com', 3780000.00, N'Hoàn thành');
+SET IDENTITY_INSERT [dbo].[donhang] OFF;
+GO
+
+-- --------------------------------------------------------
+-- 5. Tạo bảng CHITIETDONHANG
+-- --------------------------------------------------------
+CREATE TABLE [dbo].[chitietdonhang] (
+    [id] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    [id_donhang] INT NOT NULL,
+    [id_sanpham] INT NOT NULL,
+    [soluong] INT NOT NULL,
+    [dongia] DECIMAL(10,2) NOT NULL,
+    CONSTRAINT [fk_ctdh_donhang] FOREIGN KEY ([id_donhang]) REFERENCES [dbo].[donhang] ([id]) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT [fk_ctdh_sanpham] FOREIGN KEY ([id_sanpham]) REFERENCES [dbo].[sanpham] ([id]) ON DELETE CASCADE ON UPDATE CASCADE
+);
+GO
+
+-- Chèn dữ liệu mẫu cho chitietdonhang
+SET IDENTITY_INSERT [dbo].[chitietdonhang] ON;
+INSERT INTO [dbo].[chitietdonhang] ([id], [id_donhang], [id_sanpham], [soluong], [dongia]) VALUES
+(4, 4, 99, 2, 3900000.00);
+SET IDENTITY_INSERT [dbo].[chitietdonhang] OFF;
+GO
+
+-- --------------------------------------------------------
+-- 6. Tạo bảng GIOHANG
+-- --------------------------------------------------------
+CREATE TABLE [dbo].[giohang] (
+    [id] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    [id_taikhoan] INT NOT NULL,
+    [id_sanpham] INT NOT NULL,
+    [soluong] INT NOT NULL,
+    CONSTRAINT [fk_giohang_taikhoan] FOREIGN KEY ([id_taikhoan]) REFERENCES [dbo].[taikhoan] ([id]) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT [fk_giohang_sanpham] FOREIGN KEY ([id_sanpham]) REFERENCES [dbo].[sanpham] ([id]) ON DELETE CASCADE ON UPDATE CASCADE
+);
+GO
+
+-- --------------------------------------------------------
+-- 7. Tạo bảng LIENHE
+-- --------------------------------------------------------
+CREATE TABLE [dbo].[lienhe] (
+    [id] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    [hoten] NVARCHAR(100) NOT NULL,
+    [email] VARCHAR(100) NOT NULL,
+    [noidung] NVARCHAR(MAX) NOT NULL,
+    [ngaygui] DATETIME NOT NULL
+);
+GO
+
+-- Chèn dữ liệu mẫu cho lienhe
+SET IDENTITY_INSERT [dbo].[lienhe] ON;
+INSERT INTO [dbo].[lienhe] ([id], [hoten], [email], [noidung], [ngaygui]) VALUES
+(1, N'Nguyễn Việt Anh ', 'nguyentunb1@gmail.com', N'đơn hàng đến hơi chậm', '2025-11-11 09:51:27');
+SET IDENTITY_INSERT [dbo].[lienhe] OFF;
+GO
